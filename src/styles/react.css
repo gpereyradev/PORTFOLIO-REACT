@@ -1,0 +1,365 @@
+/* React interface refinements: consistent iconography and clear interaction states. */
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.tech-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.expertise-top > .tech-icon {
+  margin-left: auto;
+  width: 25px;
+  height: 25px;
+  color: var(--ink);
+}
+.tool .tech-icon {
+  width: 19px;
+  height: 19px;
+}
+.tool {
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.tool:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.project-tech > span,
+.dialog-tags > span,
+.google-tags > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.project-tech .tech-icon {
+  width: 14px;
+  height: 14px;
+}
+.dialog-tags .tech-icon {
+  width: 17px;
+  height: 17px;
+}
+.google-tags .tech-icon {
+  width: 13px;
+  height: 13px;
+}
+.inline-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.inline-icon .tech-icon {
+  width: 18px;
+  height: 18px;
+}
+.nav-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.project-info h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.project-info > div {
+  width: 100%;
+}
+.project-info p {
+  max-width: 94%;
+  line-height: 1.9;
+}
+.project-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin-top: 18px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--ink);
+}
+.project-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+.project-toolbar .filters {
+  margin: 0;
+}
+.project-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-bottom: 2px solid var(--ink);
+  min-width: 220px;
+  padding: 11px 0;
+}
+.project-search input {
+  background: none;
+  border: 0;
+  outline: none;
+  min-width: 0;
+  width: 190px;
+  font: 11px var(--body);
+  color: var(--ink);
+}
+.project-search:focus-within {
+  border-color: var(--red);
+}
+.project-search button {
+  border: 0;
+  background: none;
+  display: flex;
+  padding: 0;
+  color: var(--ink);
+}
+.project-count {
+  display: block;
+  margin: 14px 0 25px;
+  font-size: 8px;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+  color: #675b67;
+}
+.projects-empty {
+  padding: 65px 20px;
+  text-align: center;
+  border: 2px dashed #a99ca9;
+}
+.projects-empty > svg {
+  margin-bottom: 12px;
+}
+.projects-empty h3 {
+  font: 700 35px var(--display);
+}
+.projects-empty p {
+  font-size: 12px;
+  margin: 12px 0 22px;
+}
+.projects-empty .button {
+  background: var(--lime);
+  display: inline-flex;
+  gap: 25px;
+}
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 23px;
+}
+.project-links .button {
+  margin: 0;
+}
+.project-links .secondary-project-link {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.issuer-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.certificate-meta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.direct-links a > svg {
+  flex-shrink: 0;
+}
+.direct-links strong {
+  overflow-wrap: anywhere;
+}
+.direct-links a > span {
+  width: 54px;
+}
+.direct-links b {
+  display: flex;
+}
+.direct-links a:focus-visible {
+  outline: 3px solid var(--paper);
+  outline-offset: 4px;
+}
+.copy-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+.copy-email > svg {
+  flex-shrink: 0;
+}
+.copy-status {
+  display: inline-block;
+}
+.contact-intro > .contact-privacy {
+  font-size: 9px;
+  max-width: 370px;
+  line-height: 1.7;
+}
+.result-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.result-action > svg {
+  flex-shrink: 0;
+}
+.result-close,
+.dialog-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.parking-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.parking-demo > p {
+  font-size: 9px;
+  margin-top: 14px;
+}
+.slot-car > svg {
+  margin: auto;
+}
+.arcade-bottom > button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.game-overlay > small {
+  margin-top: 15px;
+}
+.portrait-frame > img {
+  object-position: 50% 50%;
+  filter: saturate(1.08) contrast(1.04);
+}
+.skip-link {
+  position: fixed;
+  left: 20px;
+  top: -80px;
+  background: var(--lime);
+  color: var(--ink);
+  padding: 15px 20px;
+  z-index: 1000;
+  border: 2px solid var(--ink);
+  font-weight: 800;
+  font-size: 12px;
+}
+.skip-link:focus {
+  top: 15px;
+}
+@media (max-width: 1100px) {
+  .project-toolbar {
+    gap: 14px;
+  }
+  .project-search {
+    width: 100%;
+    max-width: 330px;
+  }
+  .project-search input {
+    width: 100%;
+  }
+  .tool {
+    font-size: 8px;
+  }
+}
+@media (max-width: 760px) {
+  .project-toolbar {
+    margin-top: 23px;
+    gap: 16px;
+  }
+  .project-toolbar .filters {
+    margin: 0;
+  }
+  .project-search {
+    max-width: none;
+  }
+  .project-search input {
+    font-size: 12px;
+  }
+  .project-count {
+    margin: 12px 0 23px;
+  }
+  .tool .tech-icon {
+    width: 16px;
+    height: 16px;
+  }
+  .tool {
+    font-size: 8px;
+    padding: 7px;
+  }
+  .project-read {
+    font-size: 7px;
+  }
+  .project-info p {
+    max-width: 100%;
+    line-height: 1.85;
+  }
+  .project-tech > span {
+    font-size: 8px;
+  }
+  .direct-links a {
+    gap: 8px;
+  }
+  .direct-links a > span {
+    width: 49px;
+    font-size: 7px;
+  }
+  .direct-links a > svg {
+    width: 17px;
+  }
+  .direct-links strong {
+    font-size: 10px;
+  }
+  .project-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .project-links .button {
+    font-size: 9px;
+  }
+  .portrait-frame > img {
+    object-position: 50% 44%;
+  }
+  .parking-demo > p {
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .marquee > div {
+    animation: none;
+  }
+  .tool:hover {
+    transform: none;
+  }
+  .cursor {
+    display: none !important;
+  }
+}
+/* Rotated comic panels stay inside the page viewport. */
+html {
+  overflow-x: clip;
+}

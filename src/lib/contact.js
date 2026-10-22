@@ -21,11 +21,11 @@ export async function sendContactMessage(
     {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
         Accept: "application/json",
       },
       signal,
-      body: JSON.stringify({
+      // Browser-generated form encoding avoids a cross-origin OPTIONS round trip.
+      body: new URLSearchParams({
         name: values.name.trim(),
         email: values.email.trim(),
         asunto: values.subject.trim(),
@@ -59,6 +59,6 @@ export function contactErrorMessage(error) {
   if (error.needsActivation)
     return `El formulario está pendiente de activación. Puedes escribirme directamente a ${profile.email}.`;
   if (error.name === "AbortError")
-    return `La conexión tardó demasiado. Tu mensaje sigue en el formulario; inténtalo de nuevo o escríbeme a ${profile.email}.`;
+    return `La conexión tardó demasiado y no pudimos confirmar el envío. Tus datos siguen en el formulario. Revisa tu bandeja antes de reenviarlo para evitar duplicados, o escríbeme a ${profile.email}.`;
   return `No pudimos confirmar el envío. Tu mensaje sigue en el formulario; vuelve a intentarlo o escríbeme a ${profile.email}.`;
 }

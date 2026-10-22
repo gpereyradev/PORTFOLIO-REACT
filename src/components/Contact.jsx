@@ -33,7 +33,11 @@ export default function Contact() {
     setStatus("Enviando tu mensaje…");
     const controller = new AbortController();
     request.current = controller;
-    const timeout = setTimeout(() => controller.abort(), 20000);
+    const timeout = setTimeout(() => controller.abort(), 60000);
+    const slowNotice = setTimeout(
+      () => setStatus("El servicio de correo está tardando. Seguimos esperando la confirmación; no vuelvas a enviar el formulario."),
+      12000,
+    );
     try {
       await sendContactMessage(values, {
         signal: controller.signal,
@@ -51,6 +55,7 @@ export default function Contact() {
       setResult({ success: false, description: contactErrorMessage(error) });
     } finally {
       clearTimeout(timeout);
+      clearTimeout(slowNotice);
       inFlight.current = false;
       setSending(false);
     }

@@ -1,6 +1,6 @@
 # Guillermo Pereyra — React Portfolio
 
-Portfolio en español con una identidad editorial inspirada en el cómic. Desarrollado con **React 19, Vite 8 y Lucide React**. Incluye fotografía personal, nueve proyectos, 11 credenciales, habilidades con iconos, contacto por correo y dos experiencias interactivas.
+Portfolio en español con una identidad editorial inspirada en el cómic. Desarrollado con **React 19, Vite 8 y Lucide React**. Incluye fotografía personal, diez proyectos, 11 credenciales, habilidades con iconos, contacto por correo y dos experiencias interactivas.
 
 ## Ejecutar
 
@@ -84,3 +84,14 @@ FitCoach se presenta como proyecto de empresa **en desarrollo** y enlaza a su re
 - ParkSense: pulsa cada plaza para ocuparla o liberarla; la barrera se cierra al completar los espacios.
 
 La fotografía y los certificados pertenecen a su titular. Los logotipos identifican a sus respectivas herramientas y marcas. Los iconos de interfaz proceden de Lucide (licencia ISC incluida con el paquete).
+
+
+## NEXUS AI
+
+Proyecto destacado de gestión empresarial, con capturas reales del panel y acceso aportadas por el autor. Incluye frontend React/TypeScript, API Java/Spring Boot, PostgreSQL y analítica Python/FastAPI con Ridge frente a una referencia semanal. La demo pública requiere una cuenta habilitada y usa datos ficticios.
+
+- Demo: https://nexus-ai-gpereyradev.onrender.com/
+- Código: https://github.com/gpereyradev/nexus-ai
+- Imágenes: `public/assets/nexus-ai-dashboard.webp` y `public/assets/nexus-ai-login.webp`.
+
+El contador de proyectos se obtiene del catálogo; el filtro IA/datos permite encontrar NEXUS AI por su área.

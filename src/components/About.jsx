@@ -43,7 +43,7 @@ export default function About() {
           </p>
           <div className="about-facts">
             <a href="#proyectos">
-              <strong>{"07"}</strong>
+              <strong>{"08"}</strong>
               <span>
                 {"PROYECTOS PRINCIPALES"}
                 <br />

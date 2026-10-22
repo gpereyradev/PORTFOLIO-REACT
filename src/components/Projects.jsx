@@ -11,6 +11,7 @@ const filters = [
   ["all", "TODOS"],
   ["android", "ANDROID"],
   ["web", "WEB"],
+  ["ai", "IA / DATOS"],
   ["ux", "UX/UI"],
   ["game", "GAME DEV"],
   ["iot", "IoT / ARDUINO"],
@@ -53,7 +54,9 @@ export default function Projects() {
               onClick={() => setCategory(id)}
             >
               {label}
-              {id === "all" && <sup>09</sup>}
+              {id === "all" && (
+                <sup>{String(projects.length).padStart(2, "0")}</sup>
+              )}
             </button>
           ))}
         </div>
@@ -105,7 +108,7 @@ export default function Projects() {
               </div>
             </>
           );
-          const className = `project-card real-project ${project.id === "fitcoach" ? "featured-fitcoach" : ""}`;
+          const className = `project-card real-project ${project.id === "fitcoach" ? "featured-fitcoach" : project.id === "nexus-ai" ? "featured-nexus" : ""}`;
           return project.href ? (
             <a key={project.id} className={className} href={project.href}>
               {content}

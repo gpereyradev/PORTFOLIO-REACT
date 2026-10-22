@@ -1,3 +1,4 @@
+import { projects } from "../data/projects.js";
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 export default function Header() {
@@ -34,7 +35,7 @@ export default function Header() {
         }}
       >
         <a href="#proyectos">
-          Proyectos <sup>09</sup>
+          Proyectos <sup>{String(projects.length).padStart(2, "0")}</sup>
         </a>
         <a href="#universo">Sobre mí</a>
         <a href="#habilidades">Habilidades</a>

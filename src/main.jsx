@@ -5,6 +5,7 @@ import "./styles/style.css";
 import "./styles/revision.css";
 import "./styles/personal.css";
 import "./styles/react.css";
+import "./styles/nexus.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

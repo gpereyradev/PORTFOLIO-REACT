@@ -1,0 +1,387 @@
+/* NEXUS AI — real product screenshots within the portfolio's comic layout. */
+.featured-nexus {
+  grid-column: span 2;
+}
+.nexus-cover {
+  height: 445px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: 2px solid var(--ink);
+  background: #100c1a;
+  color: var(--paper);
+}
+.nexus-cover:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 85% 25%, #7c3cbd38, transparent 65%);
+  pointer-events: none;
+}
+.nexus-cover:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#b393ff30 0.8px, transparent 0.8px);
+  background-size: 8px 8px;
+  mask-image: linear-gradient(90deg, transparent 30%, #000);
+  pointer-events: none;
+}
+.nexus-cover-copy {
+  position: relative;
+  z-index: 2;
+  width: 37%;
+  padding: 68px 30px 20px;
+}
+.nexus-cover .cover-kicker {
+  color: #d0bdf8;
+  top: 22px;
+  left: 30px;
+  font-size: 8px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.nexus-live {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  font-size: 7px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  color: #c5ff80;
+}
+.nexus-live > i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c5ff80;
+  box-shadow: 0 0 0 4px #c5ff8015;
+}
+.nexus-cover h3 {
+  font: 800 clamp(76px, 7.8vw, 118px) / 0.8 var(--display);
+  margin: 23px 0 0;
+  color: var(--paper);
+  letter-spacing: -1px;
+}
+.nexus-cover h3 > span {
+  color: #b991ff;
+}
+.nexus-cover-copy > p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #d3c8e2;
+  margin-top: 21px;
+}
+.nexus-capabilities {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 17px;
+}
+.nexus-capabilities > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 6px;
+  letter-spacing: 0.6px;
+  color: #b7a3d0;
+}
+.nexus-capabilities svg {
+  color: #c4a1ff;
+  flex-shrink: 0;
+}
+.nexus-browser {
+  position: absolute;
+  right: 2.6%;
+  top: 85px;
+  width: 61%;
+  border: 1px solid #8d70bb;
+  transform: rotate(-4deg);
+  box-shadow: 11px 12px 0 #0008;
+  z-index: 1;
+  transition: transform 0.4s;
+}
+.nexus-browser-bar {
+  height: 26px;
+  background: #d7c5f4;
+  color: #27183b;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+}
+.nexus-browser-bar > i {
+  width: 5px;
+  height: 5px;
+  background: #9674c1;
+  border-radius: 50%;
+}
+.nexus-browser-bar > span {
+  font-size: 6px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  margin-left: auto;
+}
+.nexus-browser > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.nexus-cover-note {
+  position: absolute;
+  left: 38%;
+  bottom: 27px;
+  font-size: 6px;
+  letter-spacing: 0.8px;
+  color: #a594ba;
+  z-index: 2;
+}
+.nexus-cover > .cover-arrow {
+  color: #c9a6ff;
+  border-color: #c9a6ff;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+}
+.featured-nexus:hover .nexus-browser {
+  transform: rotate(-1deg) translateY(-3px);
+}
+.project-detail-gallery {
+  margin: 26px 0 0;
+  border-top: 1px solid #c8bfce;
+  padding-top: 23px;
+}
+.project-detail-gallery h3 {
+  font: 700 27px var(--display);
+  margin: 0 0 14px;
+}
+.project-detail-gallery figure {
+  margin: 0 0 20px;
+}
+.project-detail-gallery .project-detail-image {
+  margin-bottom: 8px;
+}
+.project-detail-gallery figcaption {
+  font-size: 9px;
+  line-height: 1.8;
+  color: #675d70;
+}
+@media (max-width: 1100px) {
+  .nexus-cover {
+    height: 390px;
+  }
+  .nexus-cover-copy {
+    padding: 67px 23px 20px;
+    width: 40%;
+  }
+  .nexus-cover .cover-kicker {
+    left: 23px;
+    font-size: 7px;
+  }
+  .nexus-cover h3 {
+    font-size: 92px;
+  }
+  .nexus-cover-copy > p {
+    font-size: 9px;
+  }
+  .nexus-browser {
+    top: 102px;
+    width: 59%;
+    right: 2.5%;
+  }
+  .nexus-capabilities > span {
+    font-size: 5px;
+  }
+  .nexus-cover-note {
+    font-size: 5px;
+    left: 40%;
+    bottom: 25px;
+  }
+}
+@media (max-width: 760px) {
+  .featured-nexus {
+    grid-column: auto;
+  }
+  .nexus-cover {
+    height: 465px;
+  }
+  .nexus-cover-copy {
+    padding: 60px 23px 0;
+    width: 100%;
+  }
+  .nexus-cover .cover-kicker {
+    font-size: 6px;
+    left: 23px;
+    top: 19px;
+    letter-spacing: 0.6px;
+  }
+  .nexus-live {
+    font-size: 6px;
+  }
+  .nexus-cover h3 {
+    font-size: 83px;
+    line-height: 0.8;
+    margin-top: 19px;
+  }
+  .nexus-cover h3 > br {
+    display: none;
+  }
+  .nexus-cover h3 > span {
+    margin-left: 8px;
+  }
+  .nexus-cover-copy > p {
+    font-size: 10px;
+    line-height: 1.8;
+    margin-top: 15px;
+  }
+  .nexus-capabilities {
+    position: absolute;
+    right: 22px;
+    top: 132px;
+    max-width: 105px;
+    gap: 9px;
+    margin: 0;
+  }
+  .nexus-capabilities > span {
+    font-size: 5px;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+  }
+  .nexus-capabilities svg {
+    width: 11px;
+  }
+  .nexus-browser {
+    width: 88%;
+    top: 254px;
+    right: 6%;
+    transform: rotate(-4deg);
+    box-shadow: 6px 7px 0 #0008;
+  }
+  .nexus-browser-bar {
+    height: 21px;
+    padding: 0 8px;
+    gap: 4px;
+  }
+  .nexus-browser-bar > i {
+    width: 4px;
+    height: 4px;
+  }
+  .nexus-browser-bar > span {
+    font-size: 4px;
+    letter-spacing: 0.5px;
+  }
+  .nexus-cover-note {
+    left: 23px;
+    right: 55px;
+    bottom: 21px;
+    font-size: 4px;
+    line-height: 1.8;
+  }
+  .nexus-cover > .cover-arrow {
+    width: 31px;
+    height: 31px;
+    right: 16px;
+    bottom: 15px;
+  }
+  .nexus-cover > .cover-arrow > svg {
+    width: 19px;
+  }
+  .project-detail-gallery figcaption {
+    font-size: 8px;
+  }
+}
+@media (max-width: 380px) {
+  .nexus-cover {
+    height: 430px;
+  }
+  .nexus-cover-copy {
+    padding-left: 20px;
+  }
+  .nexus-cover h3 {
+    font-size: 74px;
+  }
+  .nexus-capabilities {
+    top: 125px;
+    right: 16px;
+    max-width: 88px;
+  }
+  .nexus-capabilities > span {
+    font-size: 4px;
+  }
+  .nexus-cover-copy > p {
+    font-size: 9px;
+  }
+  .nexus-browser {
+    top: 240px;
+  }
+  .nexus-cover-note {
+    left: 20px;
+    bottom: 19px;
+  }
+  .nexus-cover .cover-kicker {
+    left: 20px;
+    font-size: 5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nexus-browser {
+    transition: none;
+  }
+  .featured-nexus:hover .nexus-browser {
+    transform: rotate(-4deg);
+  }
+}
+/* Keep the full dashboard visible, including its lower KPI row. */
+@media (min-width: 1101px) {
+  .nexus-cover {
+    height: 515px;
+  }
+  .nexus-browser {
+    top: 60px;
+    width: 58%;
+  }
+  .nexus-cover-note {
+    left: 30px;
+    bottom: 24px;
+    max-width: 32%;
+    line-height: 1.8;
+  }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .nexus-cover {
+    height: 460px;
+  }
+  .nexus-browser {
+    top: 55px;
+  }
+  .nexus-cover-note {
+    left: 23px;
+    max-width: 34%;
+    line-height: 1.8;
+  }
+}
+@media (max-width: 760px) {
+  .nexus-capabilities {
+    position: static;
+    max-width: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    gap: 12px;
+  }
+  .nexus-capabilities > span {
+    font-size: 5px;
+    white-space: nowrap;
+  }
+  .nexus-cover-note {
+    bottom: 10px;
+  }
+}
+@media (max-width: 380px) {
+  .nexus-capabilities {
+    gap: 9px;
+  }
+  .nexus-capabilities > span {
+    font-size: 4px;
+  }
+}

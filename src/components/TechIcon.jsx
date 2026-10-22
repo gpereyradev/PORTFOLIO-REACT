@@ -37,6 +37,10 @@ const brands = {
   Python: "python",
   JavaScript: "javascript",
   React: "react",
+  TypeScript: "typescript",
+  PostgreSQL: "postgresql",
+  "Spring Boot": "spring",
+  FastAPI: "fastapi",
   SQL: "mysql",
   SQLite: "sqlite",
   Bootstrap: "bootstrap",
@@ -103,6 +107,8 @@ const symbols = {
   Sistemas: ShieldCheck,
   Herramientas: GitBranch,
   Datos: Database,
+  "scikit-learn": FlaskConical,
+  "IA aplicada": Sparkles,
   Completado: CircleCheck,
 };
 

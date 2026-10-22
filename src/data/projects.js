@@ -1,6 +1,82 @@
 export const projects = [
   {
-    eyebrow: "01 / PROYECTO DE EMPRESA · EN DESARROLLO",
+    id: "nexus-ai",
+    title: "NEXUS AI",
+    eyebrow: "01 / FULL STACK · GESTIÓN + INTELIGENCIA APLICADA",
+    categories: ["web", "ux", "ai"],
+    label: "FULL STACK / ANALÍTICA Y PRODUCTO",
+    summary:
+      "Plataforma de gestión empresarial que conecta ventas, inventario y clientes con analítica y pronósticos. React y TypeScript, backend Java, PostgreSQL y un servicio Python, con una demo web disponible.",
+    intro:
+      "NEXUS AI conecta la operación de un negocio con la información necesaria para entenderlo: ventas, existencias, clientes, reportes y pronósticos. Es mi proyecto personal para integrar desarrollo frontend, backend, bases de datos y aprendizaje automático dentro de un producto funcional.",
+    details: [
+      [
+        "Un negocio, un mismo espacio",
+        "El panel reúne ventas del período, ticket promedio y productos con stock bajo, con accesos rápidos para vender, revisar inventario y consultar análisis. La interfaz incluye temas claro y oscuro, filtros, búsqueda, paginación y adaptación a celulares.",
+      ],
+      [
+        "Arquitectura full stack",
+        "React y TypeScript construyen la experiencia web. La API principal utiliza Java con Spring Boot y PostgreSQL para usuarios, catálogos, movimientos y ventas; un servicio Python con FastAPI recibe agregados autorizados para ejecutar la analítica.",
+      ],
+      [
+        "Operaciones y consistencia",
+        "Las ventas comprueban existencias y toman los precios del servidor dentro de una transacción. El sistema conserva los precios históricos y el historial de movimientos; una anulación autorizada devuelve las unidades una sola vez. Las migraciones de la base se gestionan con Flyway.",
+      ],
+      [
+        "IA aplicada con un alcance concreto",
+        "Los pronósticos comparan regresión Ridge con una referencia semanal mediante bloques cronológicos. El modelo se utiliza solo cuando cumple el criterio de mejora; si falta historial, el sistema informa la limitación. También ofrece alertas y sugerencias de reposición mediante reglas explícitas.",
+      ],
+      [
+        "Acceso según responsabilidades",
+        "ADMIN, MANAGER, ANALYST y VIEWER tienen permisos diferenciados. Las sesiones y las rutas de la API controlan el acceso a catálogos, operaciones, reportes y análisis. La demo requiere una cuenta habilitada; las contraseñas no son públicas.",
+      ],
+      [
+        "Del código a la demo",
+        "El repositorio incluye pruebas web, Java, integración con PostgreSQL, analítica Python y recorridos E2E con Playwright. La demostración está desplegada en Render con PostgreSQL en Neon y utiliza datos ficticios identificados en la interfaz.",
+      ],
+    ],
+    tags: [
+      "React",
+      "TypeScript",
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "Python",
+      "FastAPI",
+      "scikit-learn",
+      "APIs REST",
+    ],
+    cardTags: [
+      "React",
+      "TypeScript",
+      "Java",
+      "PostgreSQL",
+      "Python",
+      "IA aplicada",
+    ],
+    image: "assets/nexus-ai-dashboard.webp",
+    imageAlt:
+      "Panel real de NEXUS AI en tema oscuro: accesos rápidos, período de ventas e indicadores calculados con datos ficticios de demostración",
+    gallery: [
+      {
+        src: "assets/nexus-ai-login.webp",
+        alt: "Pantalla de acceso real de NEXUS AI con identidad morada y negra y selector de tema",
+        caption:
+          "Acceso a la demostración · Tema oscuro · Captura proporcionada del producto.",
+      },
+    ],
+    note: "Proyecto personal de demostración en evolución. Las capturas muestran datos ficticios; sus importes no representan resultados de un negocio real. El acceso requiere una cuenta demo habilitada. El alojamiento gratuito puede tardar en iniciar después de un período sin uso.",
+    link: "https://nexus-ai-gpereyradev.onrender.com/",
+    linkText: "ABRIR DEMO WEB",
+    links: [
+      {
+        href: "https://github.com/gpereyradev/nexus-ai",
+        label: "VER CÓDIGO EN GITHUB",
+      },
+    ],
+  },
+  {
+    eyebrow: "02 / PROYECTO DE EMPRESA · EN DESARROLLO",
     title: "FitCoach",
     intro:
       "FitCoach nace para reunir en una misma experiencia la relación entre un coach y sus clientes: planes, entrenamientos y seguimiento del progreso. Es un producto que desarrollo junto con mi empresa y que continúa en construcción.",
@@ -43,7 +119,7 @@ export const projects = [
     cardTags: ["Backend", "UX/UI", "Trabajo en equipo", "En curso"],
   },
   {
-    eyebrow: "02 / ANDROID · PROYECTO EN EQUIPO",
+    eyebrow: "03 / ANDROID · PROYECTO EN EQUIPO",
     title: "DoIt",
     intro:
       "Una aplicación Android para organizar pendientes, establecer fechas y seguir el avance de las tareas. DoIt reúne autenticación local, almacenamiento SQLite y un flujo de creación, consulta y edición desarrollado en equipo.",
@@ -83,7 +159,7 @@ export const projects = [
     cardTags: ["Java", "SQLite", "Pruebas unitarias"],
   },
   {
-    eyebrow: "03 / ELECTRÓNICA · TINKERCAD",
+    eyebrow: "04 / ELECTRÓNICA · TINKERCAD",
     title: "ParkSense",
     intro:
       "Sistema de parqueo simulado en Tinkercad para identificar vehículos estacionados y plazas disponibles.",
@@ -118,7 +194,7 @@ export const projects = [
     cardTags: ["Tinkercad", "Arduino Uno", "Sensores"],
   },
   {
-    eyebrow: "04 / ANDROID / PERSISTENCIA",
+    eyebrow: "05 / ANDROID / PERSISTENCIA",
     title: "Ecolim Premium",
     intro:
       "Aplicación Android para organizar el registro y seguimiento de residuos con información guardada localmente.",
@@ -148,7 +224,7 @@ export const projects = [
     cardTags: ["Java", "Android SDK", "SQLite"],
   },
   {
-    eyebrow: "05 / ANDROID / OPERACIONES CRUD",
+    eyebrow: "06 / ANDROID / OPERACIONES CRUD",
     title: "App Proforma",
     intro:
       "Herramienta móvil para gestionar productos dentro de proformas y calcular importes de manera automática.",
@@ -182,7 +258,7 @@ export const projects = [
     cardTags: ["Java", "RecyclerView", "Material Components"],
   },
   {
-    eyebrow: "06 / ANDROID / VALIDACIONES",
+    eyebrow: "07 / ANDROID / VALIDACIONES",
     title: "App Mantenimiento",
     intro:
       "Aplicación de registro de empleados con controles para mejorar la consistencia de los datos ingresados.",
@@ -212,7 +288,7 @@ export const projects = [
     cardTags: ["Java", "ListView", "Gradle"],
   },
   {
-    eyebrow: "07 / FRONTEND / REACT",
+    eyebrow: "08 / FRONTEND / REACT",
     title: "Sistema de Matrícula",
     intro:
       "Directorio de alumnos desarrollado con componentes reutilizables y estados interactivos en React.",
@@ -242,7 +318,7 @@ export const projects = [
     cardTags: ["React", "Vite", "JavaScript", "Bootstrap"],
   },
   {
-    eyebrow: "08 / UX/UI + FRONTEND",
+    eyebrow: "09 / UX/UI + FRONTEND",
     title: "Portfolio personal",
     intro:
       "Un portfolio que reúne software, diseño UX/UI y videojuegos en una misma identidad. La dirección visual toma recursos del cómic: tipografía contundente, contraste, viñetas, tramas y acentos de color.",

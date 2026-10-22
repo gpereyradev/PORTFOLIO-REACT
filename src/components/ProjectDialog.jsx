@@ -39,6 +39,22 @@ export default function ProjectDialog({ project, onClose }) {
               <p>{text}</p>
             </div>
           ))}
+          {project.gallery?.length > 0 && (
+            <div className="project-detail-gallery">
+              <h3>La experiencia en pantalla</h3>
+              {project.gallery.map((image) => (
+                <figure key={image.src}>
+                  <img
+                    className="project-detail-image"
+                    src={image.src}
+                    alt={image.alt}
+                    loading="lazy"
+                  />
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
           <TechTags items={project.tags} className="dialog-tags" />
           <div className="project-links">
             {project.link && (

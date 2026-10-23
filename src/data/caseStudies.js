@@ -38,6 +38,26 @@ export const caseStudies = {
       limit: "Producto de empresa en construcción. El avance se revisa por módulos y el diseño de Figma sirve como referencia del producto.",
     },
   },
+  tuerka: {
+    summary: "Encontrar un vehículo según lo que importa: marca, tipo y presupuesto. Un recorrido de catálogo, favoritos y detalle conectado con cotizaciones y reservas.",
+    intro: "Un catálogo de vehículos necesita ayudar a elegir, además de mostrar fotografías. Tuerka lleva los criterios de búsqueda hasta una ficha detallada y mantiene accesibles el contacto y las opciones de reserva.",
+    caseStudy: {
+      role: "Proyecto colaborativo · Plataforma web",
+      status: "Web publicada · Inventario demo",
+      signal: "Filtros que se conservan al compartir la URL",
+      problem: "Comparar vehículos exige volver a los mismos criterios. Perder la marca, el presupuesto o el tipo seleccionado obliga a reconstruir la búsqueda.",
+      decision: "Mantener los filtros y la ordenación en la URL, con favoritos locales y fichas que reúnen la información de cada vehículo.",
+      outcome: "La web permite explorar vehículos de ejemplo, aplicar criterios de búsqueda y abrir sus detalles. El proyecto también documenta cuentas, cotizaciones y reservas con funciones de servidor e integraciones externas.",
+      decisions: [
+        { title: "La búsqueda forma parte del enlace", choice: "Marca, tipo, precio, año y otros criterios se representan como parámetros de la URL.", reason: "Un enlace compartido o una recarga pueden conservar el contexto de la búsqueda sin volver a seleccionar cada filtro.", tradeoff: "El catálogo de demostración se mantiene en un archivo de datos del proyecto. Cambiar los filtros no equivale a consultar un inventario comercial en tiempo real." },
+        { title: "Separar exploración y seguimiento", choice: "El catálogo y las fichas son públicos; las cotizaciones y reservas se relacionan con una cuenta y sus permisos.", reason: "Se puede conocer la oferta antes de registrarse, mientras el seguimiento de una consulta necesita identificar a su cliente y al asesor que responde.", tradeoff: "Los favoritos se conservan en ese navegador. Los flujos de cuenta y seguimiento dependen de Supabase y de una sesión válida." },
+        { title: "El servidor verifica la reserva", choice: "Las funciones de Vercel crean la reserva pendiente y consultan el estado del pago directamente a Mercado Pago.", reason: "La página de regreso del navegador no basta para confirmar que un proveedor aceptó un pago.", tradeoff: "La integración necesita credenciales y configuración del proveedor. La revisión de la web pública no incluye operaciones de pago." },
+      ],
+      checks: ["Abre el catálogo, aplica una marca y comprueba los criterios en la URL.", "Consulta una ficha de vehículo y contrasta la experiencia con el archivo de Figma enlazado.", "Revisa en GitHub las funciones de reserva, las políticas de acceso de Supabase y las pruebas documentadas."],
+      evidence: { label: "VER ARQUITECTURA Y PRUEBAS", href: "https://github.com/Dgirto/ProyectoTuerka#backend" },
+      limit: "Proyecto colaborativo con inventario de demostración y precios referenciales. El caso describe el producto compartido y la implementación disponible en su repositorio.",
+    },
+  },
   neurochess: {
     summary: "Un rival de ajedrez con decisiones observables: motor propio en Python, dificultad ajustable y métricas reales de la búsqueda Minimax.",
     intro: "El reto es convertir una búsqueda de jugadas en una partida que se pueda seguir y entender. NeuroChess conecta un motor propio en Python con un tablero web y permite consultar cómo calcula su respuesta.",

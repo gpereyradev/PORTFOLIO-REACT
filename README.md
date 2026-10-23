@@ -1,6 +1,6 @@
 # Guillermo Pereyra — React Portfolio
 
-Portfolio en español con una identidad editorial inspirada en el cómic. Desarrollado con **React 19, Vite 8 y Lucide React**. Incluye fotografía personal, once proyectos, 11 credenciales, habilidades con iconos, contacto por correo y dos experiencias interactivas.
+Portfolio en español con una identidad editorial inspirada en el cómic. Desarrollado con **React 19, Vite 8 y Lucide React**. Incluye fotografía personal, doce proyectos, 11 credenciales, habilidades con iconos, contacto por correo y dos experiencias interactivas.
 
 ## Ejecutar
 
@@ -99,7 +99,7 @@ El contador de proyectos se obtiene del catálogo; el filtro IA/datos permite en
 
 ## Casos de proyecto
 
-El catálogo presenta once proyectos con un resultado funcional breve, participación y estado. Las diez fichas de caso organizan la lectura en problema, decisión clave y resultado actual, seguidos de los motivos, compromisos y formas de comprobarlo. Crimson Runner conserva su acceso directo al juego.
+El catálogo presenta doce proyectos con un resultado funcional breve, participación y estado. Las once fichas de caso organizan la lectura en problema, decisión clave y resultado actual, seguidos de los motivos, compromisos y formas de comprobarlo. Crimson Runner conserva su acceso directo al juego.
 
 Las demos y repositorios se enlazan al inicio de cada ficha. El contexto técnico completo queda en un desplegable. Los casos distinguen proyectos personales, trabajos académicos y contribuciones en equipo; los resultados describen comportamientos y evidencia disponible, sin atribuir métricas comerciales que no estén documentadas.
 
@@ -110,3 +110,12 @@ Ajedrez web con un motor propio en Python: Minimax, poda alfa-beta, cuatro dific
 - Jugar: https://neurochess-python.onrender.com/
 - Código: https://github.com/gpereyradev/neurochess-python
 - Captura real del juego: `public/assets/neurochess-desktop.webp`.
+
+## Tuerka
+
+Proyecto colaborativo de venta de vehículos con catálogo, filtros en la URL, detalle, favoritos y diseño original en Figma. La ficha del portfolio distingue la navegación pública del flujo de cuentas, cotizaciones y reservas documentado en el repositorio.
+
+- Web: https://proyecto-tuerka.vercel.app/
+- Repositorio: https://github.com/Dgirto/ProyectoTuerka
+- Figma: https://www.figma.com/design/4kNYV0piPpnyTGb8g7jql1/Tuerka?node-id=0-1
+- Captura real: `public/assets/tuerka-home.webp`.

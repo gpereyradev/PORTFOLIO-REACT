@@ -8,6 +8,7 @@ import "./styles/react.css";
 import "./styles/nexus.css";
 import "./styles/neurochess.css";
 import "./styles/case-studies.css";
+import "./styles/tuerka.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

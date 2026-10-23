@@ -121,9 +121,36 @@ const catalog = [
     cardTags: ["Backend", "UX/UI", "Trabajo en equipo", "En curso"],
   },
   {
+    id: "tuerka",
+    title: "Tuerka",
+    eyebrow: "03 / VENTA DE VEHÍCULOS · PROYECTO COLABORATIVO",
+    categories: ["web", "ux", "team"],
+    label: "WEB / CATÁLOGO Y RESERVA DE VEHÍCULOS",
+    summary: "Catálogo de vehículos con filtros, favoritos y fichas de detalle, conectado con un flujo de cuentas, cotizaciones y reservas documentado en el proyecto.",
+    intro: "Tuerka organiza la búsqueda de un vehículo desde el primer criterio hasta su ficha de detalle. El proyecto conecta un diseño original en Figma con una aplicación React publicada en Vercel.",
+    details: [
+      ["Del diseño a la navegación", "La identidad negra y amarilla, la portada, el catálogo y el detalle forman parte del diseño de referencia en Figma. La implementación utiliza React, React Router y Vite, con un menú y un buscador disponibles durante el recorrido."],
+      ["Un catálogo que conserva el contexto", "La búsqueda combina marca, tipo, condición, precio, año y transmisión, además de ordenación. Los criterios se guardan en la URL para conservar la selección al compartir un enlace o recargar la página. Los favoritos se almacenan en el navegador."],
+      ["De la ficha al contacto", "Cada vehículo cuenta con galería, especificaciones, pestañas y opciones relacionadas. El repositorio incluye cuentas de usuario, cotizaciones con respuesta de asesor y un flujo de reservas con Mercado Pago."],
+      ["Backend e integraciones", "Supabase aporta autenticación y PostgreSQL con políticas por fila. Las funciones de Vercel crean reservas pendientes y consultan los pagos directamente al proveedor; EmailJS permite avisar de nuevas cotizaciones. Estas integraciones requieren la configuración de sus servicios."],
+      ["Alcance colaborativo", "Se presenta como proyecto colaborativo con acceso al código, la web y el diseño original. La captura corresponde a la página publicada; los vehículos y los precios forman un inventario de demostración."],
+    ],
+    tags: ["React", "JavaScript", "React Router", "Supabase", "PostgreSQL", "Mercado Pago", "EmailJS", "Vercel", "Figma"],
+    cardTags: ["React", "Supabase", "React Router", "Figma"],
+    image: "assets/tuerka-home.webp",
+    imageAlt: "Portada real de Tuerka: identidad negra y amarilla, vehículo junto al mar y acceso al catálogo",
+    note: "Proyecto colaborativo. La web muestra inventario de demostración y precios referenciales. Las cuentas, cotizaciones y reservas dependen de la configuración de los servicios y del rol de acceso; la revisión pública se concentra en la navegación y el catálogo.",
+    link: "https://proyecto-tuerka.vercel.app/",
+    linkText: "EXPLORAR TUERKA",
+    links: [
+      { href: "https://github.com/Dgirto/ProyectoTuerka", label: "VER CÓDIGO EN GITHUB" },
+      { href: "https://www.figma.com/design/4kNYV0piPpnyTGb8g7jql1/Tuerka?node-id=0-1", label: "VER DISEÑO EN FIGMA" },
+    ],
+  },
+  {
     id: "neurochess",
     title: "NeuroChess",
-    eyebrow: "03 / GAME DEV · INTELIGENCIA ARTIFICIAL",
+    eyebrow: "04 / GAME DEV · INTELIGENCIA ARTIFICIAL",
     categories: ["game", "ai", "web"],
     label: "GAME DEV / MOTOR DE AJEDREZ CON IA",
     summary:
@@ -163,7 +190,7 @@ const catalog = [
     links: [{ href: "https://github.com/gpereyradev/neurochess-python", label: "VER CÓDIGO EN GITHUB" }],
   },
   {
-    eyebrow: "04 / ANDROID · PROYECTO EN EQUIPO",
+    eyebrow: "05 / ANDROID · PROYECTO EN EQUIPO",
     title: "DoIt",
     intro:
       "Una aplicación Android para organizar pendientes, establecer fechas y seguir el avance de las tareas. DoIt reúne autenticación local, almacenamiento SQLite y un flujo de creación, consulta y edición desarrollado en equipo.",
@@ -203,7 +230,7 @@ const catalog = [
     cardTags: ["Java", "SQLite", "Pruebas unitarias"],
   },
   {
-    eyebrow: "05 / ELECTRÓNICA · TINKERCAD",
+    eyebrow: "06 / ELECTRÓNICA · TINKERCAD",
     title: "ParkSense",
     intro:
       "Sistema de parqueo simulado en Tinkercad para identificar vehículos estacionados y plazas disponibles.",
@@ -238,7 +265,7 @@ const catalog = [
     cardTags: ["Tinkercad", "Arduino Uno", "Sensores"],
   },
   {
-    eyebrow: "06 / ANDROID / PERSISTENCIA",
+    eyebrow: "07 / ANDROID / PERSISTENCIA",
     title: "Ecolim Premium",
     intro:
       "Aplicación Android para organizar el registro y seguimiento de residuos con información guardada localmente.",
@@ -268,7 +295,7 @@ const catalog = [
     cardTags: ["Java", "Android SDK", "SQLite"],
   },
   {
-    eyebrow: "07 / ANDROID / OPERACIONES CRUD",
+    eyebrow: "08 / ANDROID / OPERACIONES CRUD",
     title: "App Proforma",
     intro:
       "Herramienta móvil para gestionar productos dentro de proformas y calcular importes de manera automática.",
@@ -302,7 +329,7 @@ const catalog = [
     cardTags: ["Java", "RecyclerView", "Material Components"],
   },
   {
-    eyebrow: "08 / ANDROID / VALIDACIONES",
+    eyebrow: "09 / ANDROID / VALIDACIONES",
     title: "App Mantenimiento",
     intro:
       "Aplicación de registro de empleados con controles para mejorar la consistencia de los datos ingresados.",
@@ -332,7 +359,7 @@ const catalog = [
     cardTags: ["Java", "ListView", "Gradle"],
   },
   {
-    eyebrow: "09 / FRONTEND / REACT",
+    eyebrow: "10 / FRONTEND / REACT",
     title: "Sistema de Matrícula",
     intro:
       "Directorio de alumnos desarrollado con componentes reutilizables y estados interactivos en React.",
@@ -362,7 +389,7 @@ const catalog = [
     cardTags: ["React", "Vite", "JavaScript", "Bootstrap"],
   },
   {
-    eyebrow: "10 / UX/UI + FRONTEND",
+    eyebrow: "11 / UX/UI + FRONTEND",
     title: "Portfolio personal",
     intro:
       "Un portfolio que reúne software, diseño UX/UI y videojuegos en una misma identidad. La dirección visual toma recursos del cómic: tipografía contundente, contraste, viñetas, tramas y acentos de color.",

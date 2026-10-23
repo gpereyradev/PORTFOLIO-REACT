@@ -1,0 +1,35 @@
+.tuerka-cover {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  background: #181813;
+  color: #fffdf3;
+  background-image: radial-gradient(#ffcd2926 0.7px, transparent 0.7px);
+  background-size: 7px 7px;
+}
+.tuerka-cover .cover-kicker { color: #dbd7bf; }
+.tuerka-cover-heading { position: absolute; top: 50px; left: 23px; right: 23px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.tuerka-cover-heading h3 { font: 800 78px/0.9 var(--display); letter-spacing: -1px; color: #fffdf3; }
+.tuerka-cover-heading h3 span, .tuerka-cover-heading > svg { color: #ffd02a; }
+.tuerka-cover-purpose { position: absolute; top: 139px; left: 24px; display: flex; align-items: center; gap: 8px; color: #dbd7bf; font-size: 7px; letter-spacing: 0.8px; }
+.tuerka-cover-browser { position: absolute; width: min(88%, 420px); top: 180px; left: 50%; border: 2px solid #ffd02a; box-shadow: 7px 7px 0 #000; transform: translateX(-50%) rotate(-3deg); transition: transform 0.3s; }
+.tuerka-cover-browser > div { height: 21px; background: #ffd02a; color: #181813; display: flex; align-items: center; gap: 4px; padding: 0 8px; }
+.tuerka-cover-browser i { width: 4px; height: 4px; border-radius: 50%; background: #51410b; }
+.tuerka-cover-browser > div > span { margin-left: auto; font-size: 5px; font-weight: 800; letter-spacing: 0.5px; }
+.tuerka-cover-browser img { width: 100%; height: auto; display: block; }
+.tuerka-cover .cover-note { color: #dbd7bf; bottom: 15px; left: 20px; font-size: 5px; max-width: calc(100% - 75px); line-height: 1.6; }
+.tuerka-cover .cover-arrow { border-color: #ffd02a; color: #ffd02a; }
+.project-card:hover .tuerka-cover-browser { transform: translateX(-50%) rotate(0deg) translateY(-3px); }
+@media (max-width: 760px) {
+  .tuerka-cover { height: 405px; }
+  .tuerka-cover-heading { top: 53px; left: 21px; right: 21px; }
+  .tuerka-cover-heading h3 { font-size: 73px; }
+  .tuerka-cover-purpose { top: 136px; left: 22px; font-size: 6px; }
+  .tuerka-cover-browser { top: 170px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tuerka-cover-browser { transition: none; }
+  .project-card:hover .tuerka-cover-browser { transform: translateX(-50%) rotate(-3deg); }
+}

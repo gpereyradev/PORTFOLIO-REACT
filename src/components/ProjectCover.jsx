@@ -1,11 +1,14 @@
 import NexusCover from "./NexusCover.jsx";
 import NeuroChessCover from "./NeuroChessCover.jsx";
+import TuerkaCover from "./TuerkaCover.jsx";
 export default function ProjectCover({ id }) {
   switch (id) {
     case "nexus-ai":
       return <NexusCover />;
     case "neurochess":
       return <NeuroChessCover />;
+    case "tuerka":
+      return <TuerkaCover />;
     case "fitcoach":
       return (
         <div className="fitcoach-cover">
@@ -53,7 +56,7 @@ export default function ProjectCover({ id }) {
       return (
         <div className="cover doit-cover">
           <span className="cover-kicker">
-            {"04 / ANDROID · TRABAJO EN EQUIPO"}
+            {"05 / ANDROID · TRABAJO EN EQUIPO"}
           </span>
           <div className="cover-word">
             {"doit"}
@@ -101,7 +104,7 @@ export default function ProjectCover({ id }) {
     case "parksense":
       return (
         <div className="cover park-cover">
-          <span className="cover-kicker">{"05 / ARDUINO · TINKERCAD"}</span>
+          <span className="cover-kicker">{"06 / ARDUINO · TINKERCAD"}</span>
           <div className="park-cover-title">
             <h3>
               {"ParkSense"}
@@ -121,7 +124,7 @@ export default function ProjectCover({ id }) {
     case "ecolim":
       return (
         <div className="cover ecolim-cover">
-          <span className="cover-kicker">{"06 / JAVA + SQLITE"}</span>
+          <span className="cover-kicker">{"07 / JAVA + SQLITE"}</span>
           <div className="cover-word">
             {"ECO"}
             <br />
@@ -160,7 +163,7 @@ export default function ProjectCover({ id }) {
     case "proforma":
       return (
         <div className="cover proforma-cover">
-          <span className="cover-kicker">{"07 / ANDROID + MATERIAL"}</span>
+          <span className="cover-kicker">{"08 / ANDROID + MATERIAL"}</span>
           <div className="cover-word">
             {"APP"}
             <br />
@@ -207,7 +210,7 @@ export default function ProjectCover({ id }) {
     case "mantenimiento":
       return (
         <div className="cover maintenance-cover">
-          <span className="cover-kicker">{"08 / JAVA + GITHUB ACTIONS"}</span>
+          <span className="cover-kicker">{"09 / JAVA + GITHUB ACTIONS"}</span>
           <div className="cover-word">
             {"PEOPLE"}
             <br />
@@ -250,7 +253,7 @@ export default function ProjectCover({ id }) {
     case "app-escuela":
       return (
         <div className="cover school-cover">
-          <span className="cover-kicker">{"09 / REACT + VITE"}</span>
+          <span className="cover-kicker">{"10 / REACT + VITE"}</span>
           <div className="cover-word">
             {"CAMPUS"}
             <br />
@@ -291,7 +294,7 @@ export default function ProjectCover({ id }) {
     case "portfolio":
       return (
         <div className="cover ux-cover">
-          <span className="cover-kicker">{"10 / DISEÑO UX/UI + FRONTEND"}</span>
+          <span className="cover-kicker">{"11 / DISEÑO UX/UI + FRONTEND"}</span>
           <div className="cover-word">
             {"DESIGN"}
             <br />
@@ -333,7 +336,7 @@ export default function ProjectCover({ id }) {
     case "runner":
       return (
         <div className="cover runner-cover">
-          <span className="cover-kicker">{"11 / JAVASCRIPT + CANVAS"}</span>
+          <span className="cover-kicker">{"12 / JAVASCRIPT + CANVAS"}</span>
           <div className="cover-word">
             {"CRIMSON"}
             <br />

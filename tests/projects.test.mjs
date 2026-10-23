@@ -6,7 +6,7 @@ import { projects } from "../src/data/projects.js";
 test("search combines discipline and technology instead of replacing the filter", () => {
   assert.deepEqual(
     filterProjects(projects, "web", "react").map((p) => p.id),
-    ["nexus-ai", "app-escuela", "portfolio"],
+    ["nexus-ai", "tuerka", "app-escuela", "portfolio"],
   );
   assert.equal(filterProjects(projects, "android", "react").length, 0);
   assert.equal(

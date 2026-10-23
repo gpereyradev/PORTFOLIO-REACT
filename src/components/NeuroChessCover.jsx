@@ -3,7 +3,7 @@ import { ArrowUpRight, BrainCircuit, GitBranch } from "lucide-react";
 export default function NeuroChessCover() {
   return (
     <div className="neurochess-cover">
-      <span className="cover-kicker">03 / GAME DEV · IA EN PYTHON</span>
+      <span className="cover-kicker">04 / GAME DEV · IA EN PYTHON</span>
       <div className="neurochess-heading">
         <h3>NEURO<span>CHESS.</span></h3>
         <BrainCircuit size={36} strokeWidth={1.4} aria-hidden="true" />

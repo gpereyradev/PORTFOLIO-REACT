@@ -16,10 +16,10 @@ test("search combines discipline and technology instead of replacing the filter"
   assert.equal(filterProjects(projects, "all", "no-coincidencia").length, 0);
 });
 
-test("NEXUS AI is discoverable by its analytics discipline and backend stack", () => {
+test("AI projects are discoverable by discipline and their backend stack", () => {
   assert.deepEqual(
     filterProjects(projects, "ai").map((project) => project.id),
-    ["nexus-ai"],
+    ["nexus-ai", "neurochess"],
   );
   assert.equal(filterProjects(projects, "web", "postgresql")[0].id, "nexus-ai");
 });

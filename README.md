@@ -1,6 +1,6 @@
 # Guillermo Pereyra — React Portfolio
 
-Portfolio en español con una identidad editorial inspirada en el cómic. Desarrollado con **React 19, Vite 8 y Lucide React**. Incluye fotografía personal, diez proyectos, 11 credenciales, habilidades con iconos, contacto por correo y dos experiencias interactivas.
+Portfolio en español con una identidad editorial inspirada en el cómic. Desarrollado con **React 19, Vite 8 y Lucide React**. Incluye fotografía personal, once proyectos, 11 credenciales, habilidades con iconos, contacto por correo y dos experiencias interactivas.
 
 ## Ejecutar
 
@@ -95,3 +95,11 @@ Proyecto destacado de gestión empresarial, con capturas reales del panel y acce
 - Imágenes: `public/assets/nexus-ai-dashboard.webp` y `public/assets/nexus-ai-login.webp`.
 
 El contador de proyectos se obtiene del catálogo; el filtro IA/datos permite encontrar NEXUS AI por su área.
+
+## NeuroChess
+
+Ajedrez web con un motor propio en Python: Minimax, poda alfa-beta, cuatro dificultades y métricas de búsqueda. Incluye reglas legales, pistas, deshacer turno y exportación PGN. La interfaz usa HTML, CSS y JavaScript; el juego se ejecuta en Render. Aparece en los filtros Web, IA/datos y Game Dev.
+
+- Jugar: https://neurochess-python.onrender.com/
+- Código: https://github.com/gpereyradev/neurochess-python
+- Captura real del juego: `public/assets/neurochess-desktop.webp`.

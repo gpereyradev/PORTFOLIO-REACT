@@ -4,6 +4,7 @@ import {
   Blocks,
   Box,
   Braces,
+  BrainCircuit,
   Bug,
   CircleCheck,
   Code2,
@@ -61,6 +62,9 @@ const brands = {
   "VS Code": "vscode",
 };
 const symbols = {
+  Minimax: BrainCircuit,
+  "Poda alfa-beta": GitBranch,
+  "Algoritmos de búsqueda": Network,
   "APIs REST": Server,
   Backend: Server,
   "Trabajo en equipo": Users,

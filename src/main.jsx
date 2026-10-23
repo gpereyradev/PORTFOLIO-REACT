@@ -6,6 +6,7 @@ import "./styles/revision.css";
 import "./styles/personal.css";
 import "./styles/react.css";
 import "./styles/nexus.css";
+import "./styles/neurochess.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

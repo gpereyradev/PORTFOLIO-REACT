@@ -119,7 +119,49 @@ export const projects = [
     cardTags: ["Backend", "UX/UI", "Trabajo en equipo", "En curso"],
   },
   {
-    eyebrow: "03 / ANDROID · PROYECTO EN EQUIPO",
+    id: "neurochess",
+    title: "NeuroChess",
+    eyebrow: "03 / GAME DEV · INTELIGENCIA ARTIFICIAL",
+    categories: ["game", "ai", "web"],
+    label: "GAME DEV / MOTOR DE AJEDREZ CON IA",
+    summary:
+      "Ajedrez web contra un motor propio en Python. Minimax con poda alfa-beta, cuatro dificultades y un panel que muestra cómo busca la IA. Incluye pistas, historial y descarga de partidas.",
+    intro:
+      "NeuroChess lleva los algoritmos de búsqueda a una experiencia que se puede jugar: un tablero de ajedrez conectado a un motor desarrollado en Python. El proyecto combina reglas de juego, inteligencia artificial clásica y diseño de interacción para entender qué calcula el ordenador antes de responder.",
+    details: [
+      [
+        "Un motor que toma decisiones",
+        "Implementé Minimax con poda alfa-beta y búsqueda iterativa. La evaluación heurística considera material, desarrollo, peones, centralización y seguridad del rey; los cuatro niveles ajustan la profundidad de búsqueda de 1 a 4, respetando un presupuesto de tiempo.",
+      ],
+      [
+        "El tablero tiene reglas",
+        "El servidor valida cada movimiento y contempla jaque, mate, ahogado, enroque, captura al paso y coronación. También identifica material insuficiente, repetición de posiciones y las condiciones de tablas por número de jugadas.",
+      ],
+      [
+        "Una partida fácil de seguir",
+        "Puedes elegir bando, cambiar la dificultad, pedir una pista, deshacer un turno o descargar la partida en PGN. La interfaz incorpora piezas SVG diferenciadas, notación de jugadas, temas claro y oscuro, controles por teclado y adaptación a móviles.",
+      ],
+      [
+        "La búsqueda a la vista",
+        "El panel de análisis permite consultar nodos explorados, cortes alfa-beta, tiempo, profundidad efectiva y evaluación de la posición. Son métricas del cálculo ejecutado por el motor, útiles para observar la relación entre dificultad, coste y decisión.",
+      ],
+      [
+        "Python detrás de la experiencia",
+        "Un servidor HTTP y una API en Python gestionan las sesiones y las jugadas. HTML, CSS y JavaScript forman el frontend; el motor utiliza la biblioteca estándar, sin librerías de ajedrez ni servicios de IA externos. Las pruebas cubren reglas, posiciones de referencia y el flujo de la API.",
+      ],
+    ],
+    tags: ["Python", "JavaScript", "HTML5", "CSS3", "Minimax", "Poda alfa-beta", "Algoritmos de búsqueda", "Pruebas unitarias"],
+    cardTags: ["Python", "JavaScript", "Minimax", "Poda alfa-beta"],
+    image: "assets/neurochess-desktop.webp",
+    imageAlt: "Captura real de NeuroChess con tablero, selección de dificultad e historial de jugadas",
+    note:
+      "Proyecto personal de IA clásica con motor didáctico propio. La profundidad máxima es 4; las partidas se conservan en memoria mientras el servidor siga activo. El alojamiento gratuito puede tardar en iniciar tras un período sin uso. Piezas Chessnut de Alexis Luengas; créditos y licencia en el repositorio.",
+    link: "https://neurochess-python.onrender.com/",
+    linkText: "JUGAR NEUROCHESS",
+    links: [{ href: "https://github.com/gpereyradev/neurochess-python", label: "VER CÓDIGO EN GITHUB" }],
+  },
+  {
+    eyebrow: "04 / ANDROID · PROYECTO EN EQUIPO",
     title: "DoIt",
     intro:
       "Una aplicación Android para organizar pendientes, establecer fechas y seguir el avance de las tareas. DoIt reúne autenticación local, almacenamiento SQLite y un flujo de creación, consulta y edición desarrollado en equipo.",
@@ -159,7 +201,7 @@ export const projects = [
     cardTags: ["Java", "SQLite", "Pruebas unitarias"],
   },
   {
-    eyebrow: "04 / ELECTRÓNICA · TINKERCAD",
+    eyebrow: "05 / ELECTRÓNICA · TINKERCAD",
     title: "ParkSense",
     intro:
       "Sistema de parqueo simulado en Tinkercad para identificar vehículos estacionados y plazas disponibles.",
@@ -194,7 +236,7 @@ export const projects = [
     cardTags: ["Tinkercad", "Arduino Uno", "Sensores"],
   },
   {
-    eyebrow: "05 / ANDROID / PERSISTENCIA",
+    eyebrow: "06 / ANDROID / PERSISTENCIA",
     title: "Ecolim Premium",
     intro:
       "Aplicación Android para organizar el registro y seguimiento de residuos con información guardada localmente.",
@@ -224,7 +266,7 @@ export const projects = [
     cardTags: ["Java", "Android SDK", "SQLite"],
   },
   {
-    eyebrow: "06 / ANDROID / OPERACIONES CRUD",
+    eyebrow: "07 / ANDROID / OPERACIONES CRUD",
     title: "App Proforma",
     intro:
       "Herramienta móvil para gestionar productos dentro de proformas y calcular importes de manera automática.",
@@ -258,7 +300,7 @@ export const projects = [
     cardTags: ["Java", "RecyclerView", "Material Components"],
   },
   {
-    eyebrow: "07 / ANDROID / VALIDACIONES",
+    eyebrow: "08 / ANDROID / VALIDACIONES",
     title: "App Mantenimiento",
     intro:
       "Aplicación de registro de empleados con controles para mejorar la consistencia de los datos ingresados.",
@@ -288,7 +330,7 @@ export const projects = [
     cardTags: ["Java", "ListView", "Gradle"],
   },
   {
-    eyebrow: "08 / FRONTEND / REACT",
+    eyebrow: "09 / FRONTEND / REACT",
     title: "Sistema de Matrícula",
     intro:
       "Directorio de alumnos desarrollado con componentes reutilizables y estados interactivos en React.",
@@ -318,7 +360,7 @@ export const projects = [
     cardTags: ["React", "Vite", "JavaScript", "Bootstrap"],
   },
   {
-    eyebrow: "09 / UX/UI + FRONTEND",
+    eyebrow: "10 / UX/UI + FRONTEND",
     title: "Portfolio personal",
     intro:
       "Un portfolio que reúne software, diseño UX/UI y videojuegos en una misma identidad. La dirección visual toma recursos del cómic: tipografía contundente, contraste, viñetas, tramas y acentos de color.",

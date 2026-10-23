@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { ArrowUpRight, Search, X } from "lucide-react";
+import { ArrowUpRight, CircleCheck, Search, X } from "lucide-react";
 import { projects } from "../data/projects.js";
 import { filterProjects } from "../lib/projects.js";
 import { profile } from "../data/profile.js";
@@ -38,10 +38,10 @@ export default function Projects() {
           <span className="red">SELECCIONADOS.</span>
         </h2>
         <p>
-          Del problema a la implementación.
+          Qué problema aborda cada proyecto.
           <br />
-          Explora el contexto, las decisiones
-          <br />y mi aporte en cada proyecto.
+          Qué decisiones lo sostienen.
+          <br />Y cómo comprobar el resultado.
         </p>
       </div>
       <div className="project-toolbar">
@@ -97,11 +97,17 @@ export default function Projects() {
                     <ArrowUpRight size={25} />
                   </h3>
                   <p>{project.summary}</p>
+                  {project.caseStudy && (
+                    <>
+                      <span className="project-result"><CircleCheck size={16} /><strong>{project.caseStudy.signal}</strong></span>
+                      <span className="project-role">{project.caseStudy.role} <span>· {project.caseStudy.status}</span></span>
+                    </>
+                  )}
                   <TechTags items={project.cardTags} />
                   <span className="project-read">
                     {project.href
                       ? "JUGAR AL PROTOTIPO"
-                      : "EXPLORAR EL PROYECTO"}{" "}
+                      : "VER CASO Y DECISIONES"}{" "}
                     <ArrowUpRight size={14} />
                   </span>
                 </div>

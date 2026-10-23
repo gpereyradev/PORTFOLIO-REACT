@@ -1,4 +1,6 @@
-export const projects = [
+import { caseStudies } from "./caseStudies.js";
+
+const catalog = [
   {
     id: "nexus-ai",
     title: "NEXUS AI",
@@ -404,3 +406,8 @@ export const projects = [
       "Un prototipo original de reflejos, con colisiones, partículas y dificultad progresiva.",
   },
 ];
+
+export const projects = catalog.map(project => ({
+  ...project,
+  ...caseStudies[project.id],
+}));

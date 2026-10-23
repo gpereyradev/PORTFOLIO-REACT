@@ -67,6 +67,7 @@ La confirmación grande solo aparece cuando el proveedor responde con éxito. An
 
 - Perfil y enlaces: `src/data/profile.js`.
 - Textos y casos de proyecto: `src/data/projects.js`.
+- Resúmenes, decisiones y evidencia de los casos: `src/data/caseStudies.js`.
 - Habilidades: `src/data/skills.js`; asignación de iconos: `src/components/TechIcon.jsx`.
 - Credenciales: `src/data/certificates.js` y documentos en `public/certificados`.
 - Fotografía: `public/assets/guillermo-pereyra.webp`.
@@ -95,6 +96,12 @@ Proyecto destacado de gestión empresarial, con capturas reales del panel y acce
 - Imágenes: `public/assets/nexus-ai-dashboard.webp` y `public/assets/nexus-ai-login.webp`.
 
 El contador de proyectos se obtiene del catálogo; el filtro IA/datos permite encontrar NEXUS AI por su área.
+
+## Casos de proyecto
+
+El catálogo presenta once proyectos con un resultado funcional breve, participación y estado. Las diez fichas de caso organizan la lectura en problema, decisión clave y resultado actual, seguidos de los motivos, compromisos y formas de comprobarlo. Crimson Runner conserva su acceso directo al juego.
+
+Las demos y repositorios se enlazan al inicio de cada ficha. El contexto técnico completo queda en un desplegable. Los casos distinguen proyectos personales, trabajos académicos y contribuciones en equipo; los resultados describen comportamientos y evidencia disponible, sin atribuir métricas comerciales que no estén documentadas.
 
 ## NeuroChess
 

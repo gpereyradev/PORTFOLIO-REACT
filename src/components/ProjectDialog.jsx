@@ -1,6 +1,7 @@
 import { ArrowUpRight, X } from "lucide-react";
 import { useDialog } from "../hooks/useDialog.js";
 import { TechTags } from "./TechIcon.jsx";
+import CaseOverview, { CaseReasoning } from "./ProjectCaseStudy.jsx";
 export default function ProjectDialog({ project, onClose }) {
   const { ref, close, onBackdropClick } = useDialog(Boolean(project), onClose);
   return (
@@ -25,6 +26,8 @@ export default function ProjectDialog({ project, onClose }) {
             <span className="red">.</span>
           </h2>
           <p className="dialog-intro">{project.intro}</p>
+          <ProjectLinks project={project} />
+          {project.caseStudy && <CaseOverview study={project.caseStudy} />}
           {project.image && (
             <img
               className="project-detail-image"
@@ -33,12 +36,16 @@ export default function ProjectDialog({ project, onClose }) {
               loading="lazy"
             />
           )}
-          {project.details.map(([title, text]) => (
-            <div className="dialog-detail" key={title}>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </div>
-          ))}
+          {project.caseStudy && <CaseReasoning study={project.caseStudy} />}
+          <details className="case-technical">
+            <summary>Implementación y contexto técnico</summary>
+            {project.details.map(([title, text]) => (
+              <div className="dialog-detail" key={title}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            ))}
+          </details>
           {project.gallery?.length > 0 && (
             <div className="project-detail-gallery">
               <h3>La experiencia en pantalla</h3>
@@ -56,34 +63,26 @@ export default function ProjectDialog({ project, onClose }) {
             </div>
           )}
           <TechTags items={project.tags} className="dialog-tags" />
-          <div className="project-links">
-            {project.link && (
-              <a
-                className="button dialog-link"
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {project.linkText}
-                <ArrowUpRight size={18} />
-              </a>
-            )}
-            {project.links?.map((link) => (
-              <a
-                className="button dialog-link secondary-project-link"
-                href={link.href}
-                key={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.label}
-                <ArrowUpRight size={18} />
-              </a>
-            ))}
-          </div>
           <p className="dialog-note">{project.note}</p>
         </div>
       )}
     </dialog>
+  );
+}
+
+function ProjectLinks({ project }) {
+  return (
+    <div className="project-links">
+      {project.link && (
+        <a className="button dialog-link" href={project.link} target="_blank" rel="noopener noreferrer">
+          {project.linkText}<ArrowUpRight size={18} />
+        </a>
+      )}
+      {project.links?.map(link => (
+        <a className="button dialog-link secondary-project-link" href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">
+          {link.label}<ArrowUpRight size={18} />
+        </a>
+      ))}
+    </div>
   );
 }

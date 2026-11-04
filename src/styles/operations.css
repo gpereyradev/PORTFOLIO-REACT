@@ -1,0 +1,30 @@
+.operations-cover {
+  --operations-ground: #183f31;
+  --operations-ink: #f1f9f2;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  padding: 26px 22px 14px;
+  background: var(--operations-ground);
+  color: var(--operations-ink);
+  text-align: left;
+}
+.operations-cover-inventra {
+  --operations-ground: #242424;
+  --operations-ink: #e4fa72;
+}
+.operations-cover-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.operations-cover-heading h3 { font: 800 clamp(38px, 4.3vw, 62px)/1 var(--display); letter-spacing: -1.3px; margin: 0; color: inherit; }
+.operations-cover-heading svg { flex-shrink: 0; }
+.operations-cover > p { font-size: 14px; line-height: 1.5; margin: 8px 0 22px; color: inherit; }
+.operations-cover > img { display: block; width: 100%; height: 256px; object-fit: cover; object-position: left top; }
+.operations-cover-caption { font-size: 11px; line-height: 1.5; margin-top: 10px; color: inherit; }
+@media (max-width: 760px) {
+  .operations-cover { height: 405px; padding: 24px 18px 14px; }
+  .operations-cover-heading h3 { font-size: clamp(38px, 10vw, 62px); }
+  .operations-cover > p { margin-bottom: 20px; }
+  .operations-cover > img { height: 244px; }
+}

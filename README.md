@@ -1,6 +1,6 @@
 # Guillermo Pereyra — React Portfolio
 
-Portfolio en español con una identidad editorial inspirada en el cómic. Desarrollado con **React 19, Vite 8 y Lucide React**. Incluye fotografía personal, doce proyectos, 11 credenciales, habilidades con iconos, contacto por correo y dos experiencias interactivas.
+Portfolio en español con una identidad editorial inspirada en el cómic. Desarrollado con **React 19, Vite 8 y Lucide React**. Incluye fotografía personal, catorce proyectos, 11 credenciales, habilidades con iconos, contacto por correo y dos experiencias interactivas.
 
 ## Ejecutar
 
@@ -99,7 +99,7 @@ El contador de proyectos se obtiene del catálogo; el filtro IA/datos permite en
 
 ## Casos de proyecto
 
-El catálogo presenta doce proyectos con un resultado funcional breve, participación y estado. Las once fichas de caso organizan la lectura en problema, decisión clave y resultado actual, seguidos de los motivos, compromisos y formas de comprobarlo. Crimson Runner conserva su acceso directo al juego.
+El catálogo presenta catorce proyectos con un resultado funcional breve, participación y estado. Las trece fichas de caso organizan la lectura en problema, decisión clave y resultado actual, seguidos de los motivos, compromisos y formas de comprobarlo. Crimson Runner conserva su acceso directo al juego.
 
 Las demos y repositorios se enlazan al inicio de cada ficha. El contexto técnico completo queda en un desplegable. Los casos distinguen proyectos personales, trabajos académicos y contribuciones en equipo; los resultados describen comportamientos y evidencia disponible, sin atribuir métricas comerciales que no estén documentadas.
 
@@ -119,3 +119,12 @@ Proyecto colaborativo de venta de vehículos con catálogo, filtros en la URL, d
 - Repositorio: https://github.com/Dgirto/ProyectoTuerka
 - Figma: https://www.figma.com/design/4kNYV0piPpnyTGb8g7jql1/Tuerka?node-id=0-1
 - Captura real: `public/assets/tuerka-home.webp`.
+
+## NovaSalud e Inventra
+
+Dos casos full stack con contexto, decisiones, tecnologías, capturas y enlaces a sus demos y repositorios:
+
+- NovaSalud: React/TypeScript, Laravel/PHP y PostgreSQL; ventas FEFO por lote, trazabilidad y Telegram. Demo: https://nova-salud-gpereyradev.onrender.com/ · Código: https://github.com/gpereyradev/EntregableFinal
+- Inventra: React, Express, Sequelize y PostgreSQL en producción (MySQL local); catálogo, proveedores y Kardex. Demo: https://inventra-gpereyradev.onrender.com/ · Frontend: https://github.com/gpereyradev/appInventario · API: https://github.com/gpereyradev/miApi
+
+Las capturas de acceso muestran las aplicaciones publicadas. Las capturas de los paneles y el catálogo se tomaron ejecutando los frontends originales con una API simulada y datos ficticios locales; no certifican el estado de una sesión de producción. Las credenciales no se publican. Los archivos WebP están en `public/assets/novasalud-*` y `public/assets/inventra-*`.

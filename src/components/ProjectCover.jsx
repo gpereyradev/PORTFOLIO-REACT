@@ -1,8 +1,12 @@
 import NexusCover from "./NexusCover.jsx";
 import NeuroChessCover from "./NeuroChessCover.jsx";
 import TuerkaCover from "./TuerkaCover.jsx";
+import OperationsCover from "./OperationsCover.jsx";
 export default function ProjectCover({ id }) {
   switch (id) {
+    case "novasalud":
+    case "inventra":
+      return <OperationsCover id={id} />;
     case "nexus-ai":
       return <NexusCover />;
     case "neurochess":

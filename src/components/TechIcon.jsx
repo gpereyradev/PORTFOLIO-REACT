@@ -37,6 +37,8 @@ import {
 
 const brands = {
   Java: "java",
+  PHP: "php",
+  MySQL: "mysql",
   Python: "python",
   JavaScript: "javascript",
   React: "react",
@@ -73,6 +75,13 @@ const symbols = {
   "Algoritmos de búsqueda": Network,
   "APIs REST": Server,
   Backend: Server,
+  Laravel: Layers,
+  "Node.js": Server,
+  Express: Server,
+  Sequelize: Database,
+  "Tailwind CSS": PenTool,
+  "Telegram Bot API": Mail,
+  Docker: Box,
   "Trabajo en equipo": Users,
   "En curso": Workflow,
   "UX/UI": PenTool,

@@ -1,3 +1,5 @@
+import { projects } from "../data/projects.js";
+
 export default function About() {
   return (
     <section className="universe" id="universo">
@@ -43,7 +45,7 @@ export default function About() {
           </p>
           <div className="about-facts">
             <a href="#proyectos">
-              <strong>{"10"}</strong>
+              <strong>{String(projects.filter(project => !project.href && project.id !== "portfolio").length).padStart(2, "0")}</strong>
               <span>
                 {"PROYECTOS PRINCIPALES"}
                 <br />

@@ -61,6 +61,7 @@ export default function Projects() {
           <span className="sr-only">{t("Buscar proyectos o tecnologías")}</span>
           <input
             type="search"
+            aria-label={t("Buscar proyectos o tecnologías")}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={t("Proyecto o tecnología…")}

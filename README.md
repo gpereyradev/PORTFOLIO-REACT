@@ -128,3 +128,11 @@ Dos casos full stack con contexto, decisiones, tecnologías, capturas y enlaces 
 - Inventra: React, Express, Sequelize y PostgreSQL en producción (MySQL local); catálogo, proveedores y Kardex. Demo: https://inventra-gpereyradev.onrender.com/ · Frontend: https://github.com/gpereyradev/appInventario · API: https://github.com/gpereyradev/miApi
 
 Las capturas de acceso muestran las aplicaciones publicadas. Las capturas de los paneles y el catálogo se tomaron ejecutando los frontends originales con una API simulada y datos ficticios locales; no certifican el estado de una sesión de producción. Las credenciales no se publican. Los archivos WebP están en `public/assets/novasalud-*` y `public/assets/inventra-*`.
+
+## Idiomas, orden y credenciales
+
+La cabecera permite alternar ES/EN. En la primera visita se utiliza el idioma principal del navegador (`es-*` o `en-*`); otros idiomas usan español. La elección manual se conserva en `localStorage`, con funcionamiento sin persistencia cuando el almacenamiento está bloqueado. Se actualizan el atributo `lang` y la descripción de la página. `src/i18n` contiene la interfaz y las fichas completas en inglés; los nombres de productos, tecnologías y capturas originales conservan su identidad.
+
+El catálogo prioriza NEXUS AI, NovaSalud, Inventra, FitCoach, Tuerka y NeuroChess; los ejercicios y prototipos aparecen después. Los filtros conservan ese orden. Las 11 credenciales se agrupan por institución: Google visible, Oracle (4) y Cisco (6) desplegables, con acceso a cada PDF. Se incorpora una captura real de la portada publicada del portfolio. Se revisaron los repositorios Android buscando capturas; solo contenían recursos de aplicación, por lo que se mantienen sus portadas identificadas como ilustraciones.
+
+Validación: `npm test`, `npm run build` y renderizado de las dos versiones y de todas las fichas. Las pruebas no envían mensajes de correo reales.

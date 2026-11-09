@@ -413,6 +413,8 @@ const catalog = [
     ],
     tags: ["React", "Vite", "Diseño UI", "CSS", "JavaScript"],
     note: "Proyecto personal en evolución. Las ilustraciones de los proyectos son composiciones gráficas; los documentos de las credenciales se conservan como en el repositorio.",
+    image: "assets/portfolio-desktop.webp",
+    imageAlt: "Captura real de la portada del portfolio publicado de Guillermo Pereyra",
     id: "portfolio",
     categories: ["ux", "web"],
     label: "UX/UI / EXPERIENCIA EDITORIAL",
@@ -527,3 +529,6 @@ export const projects = catalog.map(project => ({
   ...project,
   ...caseStudies[project.id],
 }));
+
+export const projectOrder = ['nexus-ai', 'novasalud', 'inventra', 'fitcoach', 'tuerka', 'neurochess', 'doit', 'parksense', 'portfolio', 'ecolim', 'proforma', 'app-escuela', 'mantenimiento', 'runner'];
+projects.sort((a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id));

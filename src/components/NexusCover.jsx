@@ -1,32 +1,25 @@
+import { useLocale } from "../i18n/LocaleContext.jsx";
 import { ArrowUpRight, BrainCircuit, ChartNoAxesCombined } from "lucide-react";
 
 export default function NexusCover() {
+  const { t, language } = useLocale();
   return (
     <div className="nexus-cover">
       <div className="nexus-cover-copy">
-        <span className="cover-kicker">
-          01 / FULL STACK · INTELIGENCIA APLICADA
-        </span>
+        <span className="cover-kicker">{t("FULL STACK · INTELIGENCIA APLICADA")}</span>
         <span className="nexus-live">
-          <i /> DEMO WEB DISPONIBLE
-        </span>
+          <i />{t("DEMO WEB DISPONIBLE")}</span>
         <h3>
           NEXUS
           <br />
           <span>AI.</span>
         </h3>
-        <p>
-          Ventas, inventario y clientes.
-          <br />
-          Datos que conectan el negocio.
-        </p>
+        <p>{t("Ventas, inventario y clientes.")}<br />{t("Datos que conectan el negocio.")}</p>
         <div className="nexus-capabilities">
           <span>
-            <ChartNoAxesCombined size={12} /> GESTIÓN + ANALÍTICA
-          </span>
+            <ChartNoAxesCombined size={12} />{t("GESTIÓN + ANALÍTICA")}</span>
           <span>
-            <BrainCircuit size={12} /> PRONÓSTICOS CON PYTHON
-          </span>
+            <BrainCircuit size={12} />{t("PRONÓSTICOS CON PYTHON")}</span>
         </div>
       </div>
       <div className="nexus-browser">
@@ -34,19 +27,17 @@ export default function NexusCover() {
           <i />
           <i />
           <i />
-          <span>NEXUS AI / PANEL REAL DEL PRODUCTO</span>
+          <span>{t("NEXUS AI / PANEL REAL DEL PRODUCTO")}</span>
         </div>
         <img
           src="assets/nexus-ai-dashboard.webp"
-          alt="Panel real de NEXUS AI: gestión de ventas, stock e indicadores de la demostración"
+          alt={t("Panel real de NEXUS AI: gestión de ventas, stock e indicadores de la demostración")}
           loading="lazy"
           width="1366"
           height="768"
         />
       </div>
-      <span className="nexus-cover-note">
-        CAPTURA REAL / DATOS FICTICIOS DE DEMOSTRACIÓN
-      </span>
+      <span className="nexus-cover-note">{t("CAPTURA REAL / DATOS FICTICIOS DE DEMOSTRACIÓN")}</span>
       <span className="cover-arrow">
         <ArrowUpRight size={24} />
       </span>

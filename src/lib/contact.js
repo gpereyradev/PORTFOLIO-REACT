@@ -55,7 +55,12 @@ export async function sendContactMessage(
   return data;
 }
 
-export function contactErrorMessage(error) {
+export function contactErrorMessage(error, language = "es") {
+  if (language === "en") {
+    if (error.needsActivation) return `The form is awaiting activation. You can email me directly at ${profile.email}.`;
+    if (error.name === "AbortError") return `The connection took too long and delivery could not be confirmed. Your details are still in the form. Check your inbox before resubmitting to avoid duplicates, or email ${profile.email}.`;
+    return `Delivery could not be confirmed. Your message is still in the form; try again or email ${profile.email}.`;
+  }
   if (error.needsActivation)
     return `El formulario está pendiente de activación. Puedes escribirme directamente a ${profile.email}.`;
   if (error.name === "AbortError")

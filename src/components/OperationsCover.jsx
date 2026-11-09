@@ -1,3 +1,4 @@
+import { useLocale } from "../i18n/LocaleContext.jsx";
 import { ArrowUpRight } from "lucide-react";
 
 const covers = {
@@ -16,6 +17,7 @@ const covers = {
 };
 
 export default function OperationsCover({ id }) {
+  const { t, language } = useLocale();
   const cover = covers[id];
   return (
     <div className={`operations-cover operations-cover-${id}`}>
@@ -23,9 +25,9 @@ export default function OperationsCover({ id }) {
         <h3>{cover.name}</h3>
         <ArrowUpRight size={34} aria-hidden="true" />
       </div>
-      <p>{cover.purpose}</p>
-      <img src={cover.image} alt={cover.alt} loading="lazy" width="1363" height="936" />
-      <span className="operations-cover-caption">Frontend original · Demostración local</span>
+      <p>{t(cover.purpose)}</p>
+      <img src={cover.image} alt={t(cover.alt)} loading="lazy" width="1363" height="936" />
+      <span className="operations-cover-caption">{t("Frontend original · Demostración local")}</span>
     </div>
   );
 }

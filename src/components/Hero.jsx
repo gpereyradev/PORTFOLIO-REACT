@@ -1,13 +1,15 @@
+import { useLocale } from "../i18n/LocaleContext.jsx";
 export default function Hero() {
+  const { t, language } = useLocale();
   return (
     <section className="hero" id="inicio">
       <div className="hero-grid" aria-hidden="true"></div>
       <div className="hero-copy">
         <div className="eyebrow">
           <span className="status-dot"></span>
-          {" DESARROLLO & DISEÑO "}
+          {t(" DESARROLLO & DISEÑO ")}
           <span className="sep">{"/"}</span>
-          {" LIMA, PERÚ"}
+          {t(" LIMA, PERÚ")}
         </div>
         <h1>
           <span className="hero-name">{"GUILLERMO PEREYRA"}</span>
@@ -28,15 +30,15 @@ export default function Hero() {
           </span>
         </h1>
         <p className="hero-description">
-          {"Desarrollo de software, diseño UX/UI y videojuegos."}
+          {t("Desarrollo de software, diseño UX/UI y videojuegos.")}
           <br />
-          {"Me interesa construir cómo funciona una experiencia"}
+          {t("Me interesa construir cómo funciona una experiencia")}
           <br className="desktop-br" />
-          {" y diseñar cómo se ve, se siente y responde."}
+          {t(" y diseñar cómo se ve, se siente y responde.")}
         </p>
         <div className="hero-actions">
           <a href="#proyectos" className="button lime-button">
-            {"VER PROYECTOS "}
+            {t("VER PROYECTOS ")}
             <span>{"↗"}</span>
           </a>
           <a
@@ -68,27 +70,27 @@ export default function Hero() {
           <div className="portrait-caption">
             <span>{"GUILLERMO PEREYRA"}</span>
             <strong>
-              {"Software, diseño"}
+              {t("Software, diseño")}
               <br />
-              {"e interacción."}
+              {t("e interacción.")}
             </strong>
           </div>
           <span className="portrait-index">{"GP / 01"}</span>
         </div>
         <span className="portrait-label">
-          {"INGENIERÍA DE SOFTWARE CON IA"}
+          {t("INGENIERÍA DE SOFTWARE CON IA")}
         </span>
         <div className="portrait-note">
-          {"LIMA, PERÚ "}
+          {t("LIMA, PERÚ ")}
           <span>{"↗"}</span>
         </div>
       </div>
       <div className="hero-bottom">
         <span>{"PORTFOLIO / GUILLERMO PEREYRA"}</span>
-        <a href="#proyectos" aria-label="Ver proyectos">
+        <a href="#proyectos" aria-label={t("Ver proyectos")}>
           {"↓"}
         </a>
-        <span>{"DESPLAZA PARA EXPLORAR"}</span>
+        <span>{t("DESPLAZA PARA EXPLORAR")}</span>
       </div>
     </section>
   );

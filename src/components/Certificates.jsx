@@ -1,123 +1,26 @@
-import { useState } from "react";
-import { ArrowDownToLine, ArrowUpRight, Award } from "lucide-react";
-import { certificates } from "../data/certificates.js";
-import { TechTags } from "./TechIcon.jsx";
-const issuers = [
-  ["all", "TODOS", "11"],
-  ["google", "GOOGLE", "01"],
-  ["oracle", "ORACLE", "04"],
-  ["cisco", "CISCO", "06"],
-];
+import { ArrowDownToLine, ArrowUpRight, Award, ChevronDown } from 'lucide-react';
+import { certificates } from '../data/certificates.js';
+import { useLocale } from '../i18n/LocaleContext.jsx';
 export default function Certificates() {
-  const [filter, setFilter] = useState("all");
+  const { language, t } = useLocale();
   return (
     <section className="certificates" id="certificaciones">
-      <div className="chapter">
-        <span>04 / CERTIFICACIONES</span>
-        <span>GOOGLE · ORACLE ACADEMY · CISCO</span>
-      </div>
-      <div className="section-heading reveal">
-        <h2>
-          FORMACIÓN
-          <br />
-          <span className="outline">CONTINUA.</span>
-        </h2>
-        <p>
-          11 credenciales en diseño, programación,
-          <br />
-          bases de datos, redes y seguridad.
-          <br />
-          Documentos disponibles para consulta.
-        </p>
-      </div>
-      <div
-        className="cert-filters"
-        role="group"
-        aria-label="Filtrar certificados"
-      >
-        {issuers.map(([id, name, count]) => (
-          <button
-            key={id}
-            className={filter === id ? "active" : ""}
-            aria-pressed={filter === id}
-            onClick={() => setFilter(id)}
-          >
-            {name}
-            <sup>{count}</sup>
-          </button>
-        ))}
-      </div>
-      {(filter === "all" || filter === "google") && (
-        <article className="google-credential">
-          <div className="google-mark" aria-hidden="true">
-            <span>G</span>
-          </div>
-          <div>
-            <span className="small-label">GOOGLE / COURSERA</span>
-            <h3>Google UX Design</h3>
-            <p>
-              Diseño centrado en las personas, investigación UX, accesibilidad,
-              wireframes y prototipos de interfaces.
-            </p>
-            <TechTags
-              items={["UX Research", "Figma", "Prototipado"]}
-              className="google-tags"
-            />
-          </div>
-          <a
-            className="button lime-button"
-            href="https://coursera.org/share/83d39358a87d63d7afdb1151eb1dd3ee"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            VER CREDENCIAL <ArrowUpRight size={18} />
-          </a>
+      <div className="chapter"><span>{t('04 / CERTIFICACIONES')}</span><span>GOOGLE · ORACLE ACADEMY · CISCO</span></div>
+      <div className="section-heading reveal"><h2>{t('FORMACIÓN')}<br /><span className="outline">{t('CONTINUA.')}</span></h2><p>{t('11 credenciales, agrupadas por institución.')}</p></div>
+      <div className="credential-groups">
+        <article className="credential-group credential-google">
+          <div className="credential-heading"><span className="credential-logo" aria-hidden="true">G</span><div><h3>Google / Coursera</h3><p>{t('Diseño de experiencias')}</p></div><span className="credential-count">1</span></div>
+          <div className="credential-row"><div><h4>Google UX Design</h4><p>{t('Diseño centrado en las personas, investigación UX, accesibilidad, wireframes y prototipos de interfaces.')}</p></div><a href="https://coursera.org/share/83d39358a87d63d7afdb1151eb1dd3ee" target="_blank" rel="noopener noreferrer">{t('VER CREDENCIAL')}<ArrowUpRight size={17}/></a></div>
         </article>
-      )}
-      <div className="certificate-grid">
-        {certificates
-          .filter((c) => filter === "all" || c.issuer === filter)
-          .map((cert) => (
-            <article className="certificate-card" key={cert.pdf}>
-              <a
-                className="certificate-image"
-                href={cert.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Abrir certificado ${cert.title}`}
-              >
-                <img
-                  src={cert.image}
-                  alt={`Certificado de ${cert.title} de Guillermo Pereyra`}
-                  loading="lazy"
-                />
-                <span>VER DOCUMENTO ↗</span>
-              </a>
-              <div className="certificate-content">
-                <span className="issuer-name">
-                  <Award size={12} />
-                  {cert.issuerName}
-                </span>
-                <h3>{cert.title}</h3>
-                <div className="certificate-meta">
-                  <time dateTime={cert.date}>{cert.dateText}</time>
-                  <a
-                    href={cert.pdf}
-                    download
-                    aria-label={`Descargar certificado ${cert.title}`}
-                  >
-                    PDF <ArrowDownToLine size={12} />
-                  </a>
-                </div>
-              </div>
-            </article>
-          ))}
+        {['oracle','cisco'].map(issuer => <details className="credential-group" key={issuer}>
+          <summary><div className="credential-heading"><span className="credential-logo" aria-hidden="true"><Award size={28}/></span><div><h3>{issuer === 'oracle' ? 'Oracle Academy' : 'Cisco Networking Academy'}</h3><p>{t(issuer === 'oracle' ? 'Programación y bases de datos' : 'Python, datos, redes y seguridad')}</p></div><span className="credential-count">{issuer === 'oracle' ? '4' : '6'}</span><ChevronDown className="credential-chevron" size={21}/></div><span className="credential-summary-action">{t('Ver certificados')}</span></summary>
+          <div className="credential-list">{certificates.filter(cert => cert.issuer === issuer).map(cert => <article className="credential-row" key={cert.pdf}>
+            <a className="credential-thumb" href={cert.pdf} target="_blank" rel="noopener noreferrer" aria-label={`${t('Abrir certificado')} ${t(cert.title)}`}><img src={cert.image} alt="" loading="lazy"/></a>
+            <div className="credential-info"><h4><a href={cert.pdf} target="_blank" rel="noopener noreferrer">{t(cert.title)}<ArrowUpRight size={15}/></a></h4><time dateTime={cert.date}>{new Intl.DateTimeFormat(language === 'en' ? 'en-US' : 'es-PE', {day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(`${cert.date}T12:00:00Z`))}</time></div>
+            <a className="credential-download" href={cert.pdf} download aria-label={`${t('Descargar certificado')} ${t(cert.title)}`}>PDF <ArrowDownToLine size={16}/></a>
+          </article>)}</div>
+        </details>)}
       </div>
-      <p className="certificate-footnote">
-        Las copias de Oracle reproducen fotografías de los certificados
-        originales. Los documentos de Cisco se conservan en PDF. Google UX
-        Design se presenta como una sola credencial.
-      </p>
     </section>
   );
 }

@@ -1,8 +1,10 @@
+import { useLocale } from "../i18n/LocaleContext.jsx";
 import NexusCover from "./NexusCover.jsx";
 import NeuroChessCover from "./NeuroChessCover.jsx";
 import TuerkaCover from "./TuerkaCover.jsx";
 import OperationsCover from "./OperationsCover.jsx";
 export default function ProjectCover({ id }) {
+  const { t, language } = useLocale();
   switch (id) {
     case "novasalud":
     case "inventra":
@@ -18,11 +20,11 @@ export default function ProjectCover({ id }) {
         <div className="fitcoach-cover">
           <div className="fitcoach-cover-copy">
             <span className="cover-kicker">
-              {"02 / PROYECTO DE MI EMPRESA"}
+              {t("PROYECTO DE MI EMPRESA")}
             </span>
             <span className="in-progress">
               <i></i>
-              {" EN DESARROLLO"}
+              {t(" EN DESARROLLO")}
             </span>
             <h3>
               {"FIT"}
@@ -30,14 +32,14 @@ export default function ProjectCover({ id }) {
               <span>{"COACH."}</span>
             </h3>
             <p>
-              {"Backend, diseño de producto"}
+              {t("Backend, diseño de producto")}
               <br />
-              {"y colaboración en equipo."}
+              {t("y colaboración en equipo.")}
             </p>
             <div className="fitcoach-tags">
               <span>{"BACKEND"}</span>
               <span>{"FIGMA"}</span>
-              <span>{"PRODUCTO"}</span>
+              <span>{t("PRODUCTO")}</span>
             </div>
           </div>
           <div className="fitcoach-browser">
@@ -45,11 +47,11 @@ export default function ProjectCover({ id }) {
               <i></i>
               <i></i>
               <i></i>
-              <span>{"FITCOACH / DISEÑO ORIGINAL"}</span>
+              <span>{t("FITCOACH / DISEÑO ORIGINAL")}</span>
             </div>
             <img
               src="assets/fitcoach-dashboard.webp"
-              alt="Dashboard de FitCoach capturado desde su diseño en Figma"
+              alt={t("Dashboard de FitCoach capturado desde su diseño en Figma")}
               loading="lazy"
             />
           </div>
@@ -60,7 +62,7 @@ export default function ProjectCover({ id }) {
       return (
         <div className="cover doit-cover">
           <span className="cover-kicker">
-            {"05 / ANDROID · TRABAJO EN EQUIPO"}
+            {t("ANDROID · TRABAJO EN EQUIPO")}
           </span>
           <div className="cover-word">
             {"doit"}
@@ -68,39 +70,39 @@ export default function ProjectCover({ id }) {
           </div>
           <div className="doit-board">
             <div className="doit-top">
-              {"Tus tareas "}
+              {t("Tus tareas ")}
               <b>{"+"}</b>
             </div>
             <div className="doit-task">
               <i>{"✓"}</i>
               <span>
-                {"Validar fechas"}
-                <small>{"REGLAS DE NEGOCIO"}</small>
+                {t("Validar fechas")}
+                <small>{t("REGLAS DE NEGOCIO")}</small>
               </span>
-              <b>{"COMPLETADA"}</b>
+              <b>{t("COMPLETADA")}</b>
             </div>
             <div className="doit-task">
               <i>{"◷"}</i>
               <span>
-                {"Organizar pendientes"}
-                <small>{"GESTIÓN DE ESTADOS"}</small>
+                {t("Organizar pendientes")}
+                <small>{t("GESTIÓN DE ESTADOS")}</small>
               </span>
-              <b>{"EN PROGRESO"}</b>
+              <b>{t("EN PROGRESO")}</b>
             </div>
             <div className="doit-task">
               <i>{"○"}</i>
               <span>
-                {"Preparar entrega"}
-                <small>{"PLANIFICACIÓN"}</small>
+                {t("Preparar entrega")}
+                <small>{t("PLANIFICACIÓN")}</small>
               </span>
-              <b>{"PENDIENTE"}</b>
+              <b>{t("PENDIENTE")}</b>
             </div>
             <div className="doit-bottom">
-              {"MI APORTE / VALIDACIONES + FECHAS + TESTS"}
+              {t("MI APORTE / VALIDACIONES + FECHAS + TESTS")}
             </div>
           </div>
           <span className="cover-note">
-            {"PORTADA ILUSTRATIVA DEL PROYECTO"}
+            {t("PORTADA ILUSTRATIVA DEL PROYECTO")}
           </span>
           <span className="cover-arrow">{"↗"}</span>
         </div>
@@ -108,27 +110,27 @@ export default function ProjectCover({ id }) {
     case "parksense":
       return (
         <div className="cover park-cover">
-          <span className="cover-kicker">{"06 / ARDUINO · TINKERCAD"}</span>
+          <span className="cover-kicker">{"ARDUINO · TINKERCAD"}</span>
           <div className="park-cover-title">
             <h3>
               {"ParkSense"}
               <span>{"↗"}</span>
             </h3>
-            <p>{"SENSORES / ESTACIONAMIENTO INTELIGENTE"}</p>
+            <p>{t("SENSORES / ESTACIONAMIENTO INTELIGENTE")}</p>
           </div>
           <img
             src="assets/parksense-circuito.webp"
-            alt="Circuito real del sistema de parqueo simulado en Tinkercad"
+            alt={t("Circuito real del sistema de parqueo simulado en Tinkercad")}
             loading="lazy"
           />
-          <span className="cover-note">{"CIRCUITO ORIGINAL DEL PROYECTO"}</span>
+          <span className="cover-note">{t("CIRCUITO ORIGINAL DEL PROYECTO")}</span>
           <span className="cover-arrow">{"↗"}</span>
         </div>
       );
     case "ecolim":
       return (
         <div className="cover ecolim-cover">
-          <span className="cover-kicker">{"07 / JAVA + SQLITE"}</span>
+          <span className="cover-kicker">{"JAVA + SQLITE"}</span>
           <div className="cover-word">
             {"ECO"}
             <br />
@@ -139,27 +141,27 @@ export default function ProjectCover({ id }) {
             <div className="phone-speaker"></div>
             <small>{"ECOLIM PREMIUM"}</small>
             <h4>
-              {"Panel de"}
+              {t("Panel de")}
               <br />
-              {"Control"}
+              {t("Control")}
             </h4>
-            <p>{"¿Qué deseas hacer hoy?"}</p>
+            <p>{t("¿Qué deseas hacer hoy?")}</p>
             <div className="phone-option">
               <i>{"+"}</i>
-              {" Registrar residuos"}
+              {t(" Registrar residuos")}
             </div>
             <div className="phone-option">
               <i>{"≡"}</i>
-              {" Ver historial"}
+              {t(" Ver historial")}
             </div>
             <div className="phone-option">
               <i>{"↗"}</i>
-              {" Generar reportes"}
+              {t(" Generar reportes")}
             </div>
             <span className="phone-home"></span>
           </div>
           <span className="cover-note">
-            {"RECREACIÓN VISUAL DE LA INTERFAZ"}
+            {t("RECREACIÓN VISUAL DE LA INTERFAZ")}
           </span>
           <span className="cover-arrow">{"↗"}</span>
         </div>
@@ -167,7 +169,7 @@ export default function ProjectCover({ id }) {
     case "proforma":
       return (
         <div className="cover proforma-cover">
-          <span className="cover-kicker">{"08 / ANDROID + MATERIAL"}</span>
+          <span className="cover-kicker">{"ANDROID + MATERIAL"}</span>
           <div className="cover-word">
             {"APP"}
             <br />
@@ -204,17 +206,17 @@ export default function ProjectCover({ id }) {
             </code>
             <div className="code-footer">
               {"JAVA "}
-              <span>{"● CRUD + VALIDACIONES"}</span>
+              <span>{t("● CRUD + VALIDACIONES")}</span>
             </div>
           </div>
-          <span className="cover-note">{"LÓGICA DE PRODUCTOS Y TOTALES"}</span>
+          <span className="cover-note">{t("LÓGICA DE PRODUCTOS Y TOTALES")}</span>
           <span className="cover-arrow">{"↗"}</span>
         </div>
       );
     case "mantenimiento":
       return (
         <div className="cover maintenance-cover">
-          <span className="cover-kicker">{"09 / JAVA + GITHUB ACTIONS"}</span>
+          <span className="cover-kicker">{"JAVA + GITHUB ACTIONS"}</span>
           <div className="cover-word">
             {"PEOPLE"}
             <br />
@@ -222,25 +224,25 @@ export default function ProjectCover({ id }) {
           </div>
           <div className="employee-pass">
             <div className="pass-top">
-              {"REGISTRO DE EMPLEADOS "}
+              {t("REGISTRO DE EMPLEADOS ")}
               <b>{"↗"}</b>
             </div>
             <div className="pass-profile">
               <div className="pass-avatar">{"GP"}</div>
               <div>
                 <small>{"APP MANTENIMIENTO"}</small>
-                <strong>{"Datos consistentes."}</strong>
-                <span>{"VALIDACIONES / ANDROID"}</span>
+                <strong>{t("Datos consistentes.")}</strong>
+                <span>{t("VALIDACIONES / ANDROID")}</span>
               </div>
             </div>
             <div className="pass-field">
               {"DNI "}
-              <b>{"8 dígitos"}</b>
+              <b>{t("8 dígitos")}</b>
               <i>{"✓"}</i>
             </div>
             <div className="pass-field">
-              {"Sueldo "}
-              <b>{"Mayor que 0"}</b>
+              {t("Sueldo ")}
+              <b>{t("Mayor que 0")}</b>
               <i>{"✓"}</i>
             </div>
             <div className="pass-bottom">
@@ -249,7 +251,7 @@ export default function ProjectCover({ id }) {
             </div>
           </div>
           <span className="cover-note">
-            {"REGISTRO / VALIDACIÓN / LISTADO"}
+            {t("REGISTRO / VALIDACIÓN / LISTADO")}
           </span>
           <span className="cover-arrow">{"↗"}</span>
         </div>
@@ -257,7 +259,7 @@ export default function ProjectCover({ id }) {
     case "app-escuela":
       return (
         <div className="cover school-cover">
-          <span className="cover-kicker">{"10 / REACT + VITE"}</span>
+          <span className="cover-kicker">{"REACT + VITE"}</span>
           <div className="cover-word">
             {"CAMPUS"}
             <br />
@@ -266,24 +268,24 @@ export default function ProjectCover({ id }) {
           <div className="school-window">
             <div className="school-bar">
               <span>{"● ● ●"}</span>
-              <b>{"Directorio de alumnos"}</b>
+              <b>{t("Directorio de alumnos")}</b>
               <i>{"↗"}</i>
             </div>
             <div className="school-cards">
               <div>
                 <i>{"DP"}</i>
-                <b>{"Desarrollo de Software"}</b>
-                <span>{"Matriculado"}</span>
+                <b>{t("Desarrollo de Software")}</b>
+                <span>{t("Matriculado")}</span>
               </div>
               <div>
                 <i>{"MP"}</i>
-                <b>{"Diseño Gráfico"}</b>
-                <span className="inactive">{"Inactivo"}</span>
+                <b>{t("Diseño Gráfico")}</b>
+                <span className="inactive">{t("Inactivo")}</span>
               </div>
               <div>
                 <i>{"CM"}</i>
-                <b>{"Administración"}</b>
-                <span>{"Matriculado"}</span>
+                <b>{t("Administración")}</b>
+                <span>{t("Matriculado")}</span>
               </div>
             </div>
             <div className="school-code">
@@ -296,51 +298,11 @@ export default function ProjectCover({ id }) {
         </div>
       );
     case "portfolio":
-      return (
-        <div className="cover ux-cover">
-          <span className="cover-kicker">{"11 / DISEÑO UX/UI + FRONTEND"}</span>
-          <div className="cover-word">
-            {"DESIGN"}
-            <br />
-            {"SYSTEM."}
-          </div>
-          <div className="ux-board">
-            <div className="ux-title">
-              {"GP "}
-              <span>{"PORTFOLIO / UI"}</span>
-            </div>
-            <div className="ux-swatches">
-              <i></i>
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-            <div className="ux-types">
-              {"Aa "}
-              <span>
-                {"Diseño."}
-                <br />
-                {"Código."}
-                <br />
-                {"Interacción."}
-              </span>
-            </div>
-            <div className="ux-controls">
-              <span>{"PROYECTOS ↗"}</span>
-              <b>{"→"}</b>
-              <i>{"✳"}</i>
-            </div>
-          </div>
-          <span className="cover-note">
-            {"IDENTIDAD / JERARQUÍA / RESPONSIVE"}
-          </span>
-          <span className="cover-arrow">{"↗"}</span>
-        </div>
-      );
+      return <div className="screenshot-cover"><img src="assets/portfolio-desktop.webp" alt={t("Captura real de la portada del portfolio publicado de Guillermo Pereyra")} loading="lazy"/><span>{t("CAPTURA REAL / WEB PUBLICADA")}</span></div>;
     case "runner":
       return (
         <div className="cover runner-cover">
-          <span className="cover-kicker">{"12 / JAVASCRIPT + CANVAS"}</span>
+          <span className="cover-kicker">{"JAVASCRIPT + CANVAS"}</span>
           <div className="cover-word">
             {"CRIMSON"}
             <br />
@@ -355,7 +317,7 @@ export default function ProjectCover({ id }) {
             <div className="runner-block"></div>
             <span>{"PRESS START →"}</span>
           </div>
-          <span className="cover-note">{"PROTOTIPO ORIGINAL JUGABLE"}</span>
+          <span className="cover-note">{t("PROTOTIPO ORIGINAL JUGABLE")}</span>
           <span className="cover-arrow">{"▶"}</span>
         </div>
       );

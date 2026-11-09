@@ -1,8 +1,10 @@
+import { useLocale } from "../i18n/LocaleContext.jsx";
 import { ArrowUpRight, X } from "lucide-react";
 import { useDialog } from "../hooks/useDialog.js";
 import { TechTags } from "./TechIcon.jsx";
 import CaseOverview, { CaseReasoning } from "./ProjectCaseStudy.jsx";
 export default function ProjectDialog({ project, onClose }) {
+  const { t, language } = useLocale();
   const { ref, close, onBackdropClick } = useDialog(Boolean(project), onClose);
   return (
     <dialog
@@ -14,7 +16,7 @@ export default function ProjectDialog({ project, onClose }) {
       <button
         className="dialog-close"
         onClick={close}
-        aria-label="Cerrar proyecto"
+        aria-label={t("Cerrar proyecto")}
       >
         <X />
       </button>
@@ -38,7 +40,7 @@ export default function ProjectDialog({ project, onClose }) {
           )}
           {project.caseStudy && <CaseReasoning study={project.caseStudy} />}
           <details className="case-technical">
-            <summary>Implementación y contexto técnico</summary>
+            <summary>{t("Implementación y contexto técnico")}</summary>
             {project.details.map(([title, text]) => (
               <div className="dialog-detail" key={title}>
                 <h3>{title}</h3>
@@ -48,7 +50,7 @@ export default function ProjectDialog({ project, onClose }) {
           </details>
           {project.gallery?.length > 0 && (
             <div className="project-detail-gallery">
-              <h3>La experiencia en pantalla</h3>
+              <h3>{t("La experiencia en pantalla")}</h3>
               {project.gallery.map((image) => (
                 <figure key={image.src}>
                   <img
@@ -71,16 +73,17 @@ export default function ProjectDialog({ project, onClose }) {
 }
 
 function ProjectLinks({ project }) {
+  const { t } = useLocale();
   return (
     <div className="project-links">
       {project.link && (
         <a className="button dialog-link" href={project.link} target="_blank" rel="noopener noreferrer">
-          {project.linkText}<ArrowUpRight size={18} />
+          {t(project.linkText)}<ArrowUpRight size={18} />
         </a>
       )}
       {project.links?.map(link => (
         <a className="button dialog-link secondary-project-link" href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">
-          {link.label}<ArrowUpRight size={18} />
+          {t(link.label)}<ArrowUpRight size={18} />
         </a>
       ))}
     </div>

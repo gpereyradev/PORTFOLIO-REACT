@@ -1,3 +1,4 @@
+import { useLocale } from "../i18n/LocaleContext.jsx";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Copy, Mail, Send } from "lucide-react";
 import { profile } from "../data/profile.js";
@@ -10,6 +11,7 @@ import ResultDialog from "./ResultDialog.jsx";
 import TechIcon from "./TechIcon.jsx";
 const empty = { name: "", email: "", subject: "", message: "", company: "" };
 export default function Contact() {
+  const { t, language } = useLocale();
   const [values, setValues] = useState(empty);
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState("");
@@ -52,7 +54,7 @@ export default function Contact() {
       });
     } catch (error) {
       setStatus("El envío no se confirmó. Tus datos siguen en el formulario.");
-      setResult({ success: false, description: contactErrorMessage(error) });
+      setResult({ success: false, description: contactErrorMessage(error, language) });
     } finally {
       clearTimeout(timeout);
       clearTimeout(slowNotice);
@@ -71,28 +73,20 @@ export default function Contact() {
   return (
     <section className="contact" id="contacto">
       <div className="chapter">
-        <span>06 / CONTACTO</span>
-        <span>PROYECTOS · COLABORACIONES · OPORTUNIDADES</span>
+        <span>{t("06 / CONTACTO")}</span>
+        <span>{t("PROYECTOS · COLABORACIONES · OPORTUNIDADES")}</span>
       </div>
       <div className="contact-layout">
         <div className="contact-intro reveal">
-          <span className="small-label">¿TIENES UN PROYECTO EN MENTE?</span>
-          <h2>
-            HABLEMOS
-            <br />
-            DE TU
-            <br />
-            <span>PROYECTO.</span>
+          <span className="small-label">{t("¿TIENES UN PROYECTO EN MENTE?")}</span>
+          <h2>{t("HABLEMOS")}<br />{t("DE TU")}<br />
+            <span>{t("PROYECTO.")}</span>
           </h2>
-          <p>
-            Cuéntame qué necesitas: software, una interfaz o una experiencia
-            interactiva. Escríbeme por correo o conoce más de mi trabajo en
-            LinkedIn y GitHub.
-          </p>
+          <p>{t("Cuéntame qué necesitas: software, una interfaz o una experiencia interactiva. Escríbeme por correo o conoce más de mi trabajo en LinkedIn y GitHub.")}</p>
           <div className="direct-links">
             <a href={`mailto:${profile.email}`}>
               <Mail size={20} />
-              <span>CORREO</span>
+              <span>{t("CORREO")}</span>
               <strong>{profile.email}</strong>
               <b>
                 <ArrowUpRight />
@@ -127,24 +121,20 @@ export default function Contact() {
               </b>
             </a>
           </div>
-          <button className="copy-email" onClick={copy}>
-            COPIAR CORREO <Copy size={14} />
+          <button className="copy-email" onClick={copy}>{t("COPIAR CORREO")}<Copy size={14} />
           </button>
           <span className="copy-status" role="status">
-            {copied}
+            {t(copied)}
           </span>
-          <p className="contact-privacy">
-            Los datos del formulario se utilizan para responder a tu consulta.
-          </p>
+          <p className="contact-privacy">{t("Los datos del formulario se utilizan para responder a tu consulta.")}</p>
         </div>
         <div className="contact-form-panel reveal">
           <div className="contact-form-top">
             <span className="inline-icon">
-              <Mail size={15} /> ENVIAR UN CORREO
-            </span>
+              <Mail size={15} />{t("ENVIAR UN CORREO")}</span>
             <ArrowUpRight size={23} />
           </div>
-          <h3>Cuéntame tu idea.</h3>
+          <h3>{t("Cuéntame tu idea.")}</h3>
           <form
             id="contact-form"
             action={`https://formsubmit.co/${profile.email}`}
@@ -154,7 +144,7 @@ export default function Contact() {
           >
             <fieldset disabled={sending}>
               <div className="form-honeypot" aria-hidden="true">
-                <label htmlFor="contact-company">Dejar vacío</label>
+                <label htmlFor="contact-company">{t("Dejar vacío")}</label>
                 <input
                   id="contact-company"
                   name="company"
@@ -166,7 +156,7 @@ export default function Contact() {
               </div>
               <div className="form-row">
                 <div className="field">
-                  <label htmlFor="contact-name">Tu nombre</label>
+                  <label htmlFor="contact-name">{t("Tu nombre")}</label>
                   <input
                     id="contact-name"
                     name="name"
@@ -174,13 +164,13 @@ export default function Contact() {
                     required
                     minLength={2}
                     maxLength={100}
-                    placeholder="Nombre y apellido"
+                    placeholder={t("Nombre y apellido")}
                     value={values.name}
                     onChange={change}
                   />
                 </div>
                 <div className="field">
-                  <label htmlFor="contact-email">Tu correo</label>
+                  <label htmlFor="contact-email">{t("Tu correo")}</label>
                   <input
                     id="contact-email"
                     name="email"
@@ -188,14 +178,14 @@ export default function Contact() {
                     autoComplete="email"
                     required
                     maxLength={254}
-                    placeholder="tu@correo.com"
+                    placeholder={t("tu@correo.com")}
                     value={values.email}
                     onChange={change}
                   />
                 </div>
               </div>
               <div className="field">
-                <label htmlFor="contact-subject">¿En qué puedo ayudarte?</label>
+                <label htmlFor="contact-subject">{t("¿En qué puedo ayudarte?")}</label>
                 <select
                   id="contact-subject"
                   name="subject"
@@ -203,7 +193,7 @@ export default function Contact() {
                   value={values.subject}
                   onChange={change}
                 >
-                  <option value="">Selecciona una opción</option>
+                  <option value="">{t("Selecciona una opción")}</option>
                   {[
                     "Desarrollo de software",
                     "Diseño UX/UI",
@@ -211,12 +201,12 @@ export default function Contact() {
                     "Oportunidad laboral",
                     "Otro proyecto",
                   ].map((subject) => (
-                    <option key={subject}>{subject}</option>
+                    <option key={subject} value={subject}>{t(subject)}</option>
                   ))}
                 </select>
               </div>
               <div className="field">
-                <label htmlFor="contact-message">Tu mensaje</label>
+                <label htmlFor="contact-message">{t("Tu mensaje")}</label>
                 <textarea
                   id="contact-message"
                   name="message"
@@ -224,7 +214,7 @@ export default function Contact() {
                   required
                   minLength={10}
                   maxLength={3000}
-                  placeholder="Objetivo, alcance, fechas o lo que te gustaría conversar…"
+                  placeholder={t("Objetivo, alcance, fechas o lo que te gustaría conversar…")}
                   value={values.message}
                   onChange={change}
                 />
@@ -234,7 +224,7 @@ export default function Contact() {
                 id="contact-send"
                 type="submit"
               >
-                {sending ? "ENVIANDO" : "ENVIAR MENSAJE"}
+                {sending ? t("ENVIANDO") : t("ENVIAR MENSAJE")}
                 {sending ? (
                   <span className="send-spinner" aria-hidden="true" />
                 ) : (
@@ -242,12 +232,9 @@ export default function Contact() {
                 )}
               </button>
             </fieldset>
-            <p className="form-explanation">
-              Recibiré tu mensaje por correo y responderé a la dirección que
-              indiques.
-            </p>
+            <p className="form-explanation">{t("Recibiré tu mensaje por correo y responderé a la dirección que indiques.")}</p>
             <p id="contact-status" role="status" aria-live="polite">
-              {status}
+              {t(status)}
             </p>
           </form>
         </div>

@@ -1,3 +1,4 @@
+import { useLocale } from "../i18n/LocaleContext.jsx";
 import {
   Accessibility,
   AppWindow,
@@ -154,12 +155,13 @@ export default function TechIcon({ name, className = "" }) {
   );
 }
 export function TechTags({ items, className = "project-tech" }) {
+  const { t } = useLocale();
   return (
     <div className={className}>
       {items.map((name) => (
         <span key={name}>
           <TechIcon name={name} />
-          {name}
+          {t(name)}
         </span>
       ))}
     </div>

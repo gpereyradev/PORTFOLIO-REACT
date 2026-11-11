@@ -3,13 +3,14 @@ import { useMemo, useState } from "react";
 import { ArrowUpRight, CircleCheck, Search, X } from "lucide-react";
 import { useProjects } from "../i18n/useProjects.js";
 import { filterProjects } from "../lib/projects.js";
+import { featuredProjectIds } from "../data/projects.js";
 import { profile } from "../data/profile.js";
 import ProjectCover from "./ProjectCover.jsx";
 import ProjectDialog from "./ProjectDialog.jsx";
 import ParkingDemo from "./ParkingDemo.jsx";
 import TechIcon, { TechTags } from "./TechIcon.jsx";
 const filters = [
-  ["all", "TODOS"],
+  ["featured", "DESTACADOS"],
   ["android", "ANDROID"],
   ["web", "WEB"],
   ["ai", "IA / DATOS"],
@@ -19,9 +20,9 @@ const filters = [
   ["team", "EN EQUIPO"],
 ];
 export default function Projects() {
-  const { t, language } = useLocale();
+  const { t } = useLocale();
   const projects = useProjects();
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState("featured");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(null);
   const filtered = useMemo(
@@ -38,20 +39,21 @@ export default function Projects() {
         <h2>{t("PROYECTOS")}<br />
           <span className="red">{t("SELECCIONADOS.")}</span>
         </h2>
-        <p>{t("Qué problema aborda cada proyecto.")}<br />{t("Qué decisiones lo sostienen.")}<br />{t("Y cómo comprobar el resultado.")}</p>
+        <p>{t("Explora mis proyectos destacados o elige una categoría para ver más.")}</p>
       </div>
       <div className="project-toolbar">
         <div className="filters" role="group" aria-label={t("Filtrar proyectos")}>
           {filters.map(([id, label]) => (
             <button
+              type="button"
               className={category === id ? "active" : ""}
               aria-pressed={category === id}
               key={id}
               onClick={() => setCategory(id)}
             >
               {t(label)}
-              {id === "all" && (
-                <sup>{String(projects.length).padStart(2, "0")}</sup>
+              {id === "featured" && (
+                <sup>{featuredProjectIds.length}</sup>
               )}
             </button>
           ))}
@@ -79,7 +81,7 @@ export default function Projects() {
       </div>
       <span className="project-count" role="status">
         {filtered.length} {filtered.length === 1 ? t("proyecto") : t("proyectos")} {t("/ explora cada caso")}</span>
-      <div className="project-grid">
+      <div className={`project-grid${category === "featured" && !query.trim() ? " project-grid-featured" : ""}`}>
         {filtered.map((project) => {
           const content = (
             <>
@@ -132,16 +134,17 @@ export default function Projects() {
           <h3>{t("No encontré ese proyecto.")}</h3>
           <p>{t("Prueba con Java, React o una disciplina diferente.")}</p>
           <button
+            type="button"
             className="button"
             onClick={() => {
               setQuery("");
-              setCategory("all");
+              setCategory("featured");
             }}
-          >{t("VER TODOS")}<ArrowUpRight size={17} />
+          >{t("VER DESTACADOS")}<ArrowUpRight size={17} />
           </button>
         </div>
       )}
-      <ParkingDemo />
+      {filtered.some((project) => project.id === "parksense") && <ParkingDemo />}
       <a
         className="all-repos"
         href={profile.github}

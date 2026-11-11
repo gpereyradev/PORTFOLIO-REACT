@@ -3,6 +3,16 @@ import assert from "node:assert/strict";
 import { filterProjects } from "../src/lib/projects.js";
 import { projects } from "../src/data/projects.js";
 
+test("the featured view shows only the curated projects in order", () => {
+  assert.deepEqual(filterProjects(projects, "featured").map((project) => project.id), [
+    "inventra", "nexus-ai", "tarifa-clara", "neurochess", "fitcoach",
+  ]);
+  assert.deepEqual(filterProjects(projects, "featured", "tarifa clara").map((project) => project.id), ["tarifa-clara"]);
+  assert.equal(filterProjects(projects, "featured", "NovaSalud").length, 0);
+  assert.equal(filterProjects(projects, "web", "NovaSalud")[0].id, "novasalud");
+  assert.equal(filterProjects(projects, "android", "DoIt")[0].id, "doit");
+});
+
 test("search combines discipline and technology instead of replacing the filter", () => {
   assert.deepEqual(
     filterProjects(projects, "web", "react").map((p) => p.id),

@@ -80,6 +80,33 @@ export const englishProjects = {
       evidence:{label:'VIEW API DOCUMENTATION'},limit:'Academic inventory system. MySQL is the local option and PostgreSQL the deployed option; valuation uses purchase costs.',
     },
   },
+  'tarifa-clara': {
+    eyebrow: 'WEB · CALCULATOR FOR FREELANCERS AND CONSULTANCIES',
+    label: 'WEB / HOURLY RATE CALCULATOR',
+    summary: 'Work out what to charge per hour based on your expenses, target profit and billable time.',
+    intro: 'Tarifa Clara helps freelancers and consultancies turn a monthly target and billable hours into an hourly rate. It shows how each estimate breaks down and lets you compare scenarios as you edit.',
+    details: [
+      ['How the calculation works', 'The estimate subtracts vacation and holidays, applies the billable percentage, and spreads the annual revenue target over the remaining hours. The tax reserve and fixed contribution are editable.'],
+      ['Two profiles in the browser', 'The Freelancer profile uses personal expenses. The Consultancy profile uses partner compensation and team hours. The browser stores each profile’s values separately.'],
+      ['Implementation and design', 'HTML, CSS and JavaScript modules make up the static site deployed on Vercel. The editorial layout adapts to desktop and mobile, and the estimate can be copied as a summary.'],
+    ],
+    imageAlt: 'Live Tarifa Clara homepage showing the recommended hourly rate for the example scenario',
+    gallery: [{ alt: 'Tarifa Clara form with expenses, working hours and the estimate breakdown', caption: 'Live calculator with the website’s built-in example values.' }],
+    note: 'A planning calculator. The tax reserve is entered as an estimated percentage of revenue.',
+    caseStudy: {
+      role: 'Personal project · Web design and development',
+      status: 'Live on Vercel',
+      signal: 'Minimum and recommended hourly rates update in real time',
+      problem: 'Dividing expenses by all working hours underestimates the hourly rate when some of the week goes to non-billable tasks.',
+      decision: 'Use annual billable hours and show two rates: a minimum that covers expenses and a recommended rate that reaches the profit target.',
+      outcome: 'The estimate updates as values change, showing billable hours, the monthly revenue target and its breakdown.',
+      decisions: [
+        { title: 'An estimate you can check', choice: 'Show the hours and amounts behind each scenario alongside the rate.', reason: 'The user can see how expenses, available time and the tax reserve affect the estimate.', tradeoff: 'The reserve uses an editable percentage of revenue.' },
+      ],
+      checks: ['Change the billable percentage and compare the rate before and after.', 'Switch between Freelancer and Consultancy to see how each scenario changes.'],
+      limit: 'The application estimates an hourly rate for planning and stores scenarios in the browser.',
+    },
+  },
   fitcoach:{
     eyebrow:'COMPANY PROJECT / BACKEND + PRODUCT',label:'TEAM DEVELOPMENT / COMPANY',
     summary:'A shared experience for coaches and clients. My contribution focuses on backend work and organizing profiles and plans in a product still in development.',

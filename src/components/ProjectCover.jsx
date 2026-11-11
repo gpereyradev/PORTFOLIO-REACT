@@ -15,6 +15,13 @@ export default function ProjectCover({ id }) {
       return <NeuroChessCover />;
     case "tuerka":
       return <TuerkaCover />;
+    case "tarifa-clara":
+      return (
+        <div className="screenshot-cover tarifa-clara-cover">
+          <img src="assets/tarifa-clara-portada.webp" alt="" loading="lazy" width="1140" height="489" />
+          <span>{t("CAPTURA REAL / WEB PUBLICADA")}</span>
+        </div>
+      );
     case "fitcoach":
       return (
         <div className="fitcoach-cover">

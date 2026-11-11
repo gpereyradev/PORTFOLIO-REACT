@@ -1,5 +1,10 @@
 export const englishUI = {
 'Saltar a los proyectos':'Skip to projects',
+'DESTACADOS':'FEATURED',
+'VER DESTACADOS':'VIEW FEATURED',
+'Explora mis proyectos destacados o elige una categoría para ver más.':'Browse my featured projects or choose a category to see more.',
+'ABRIR CALCULADORA':'OPEN CALCULATOR',
+'REPOSITORIO PRIVADO':'PRIVATE REPOSITORY',
 'DISEÑO UX/UI':'UX/UI DESIGN','DESARROLLO DE SOFTWARE':'SOFTWARE DEVELOPMENT','VIDEOJUEGOS':'GAME DEVELOPMENT','DISEÑO 2D / 3D':'2D / 3D DESIGN',
 '02 / SOBRE MÍ':'02 / ABOUT ME','PROGRAMACIÓN + PENSAMIENTO VISUAL':'PROGRAMMING + VISUAL THINKING','DISEÑO,':'DESIGN,','CÓDIGO E':'CODE &','INTERACCIÓN.':'INTERACTION.','LIMA, PERÚ':'LIMA, PERU','INGENIERÍA DE SOFTWARE CON IA / SENATI':'SOFTWARE ENGINEERING WITH AI / SENATI',
 'Soy desarrollador full-stack y estudiante de Ingeniería de Software con IA en SENATI. Me gusta trabajar entre la lógica de un sistema y la experiencia de quien lo usa.':"I’m a full-stack developer studying Software Engineering with AI at SENATI. I enjoy connecting the logic behind a system with the experience of the people who use it.",

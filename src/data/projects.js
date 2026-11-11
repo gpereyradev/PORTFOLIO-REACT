@@ -523,12 +523,56 @@ const catalog = [
       limit: "Sistema académico de inventario. MySQL es la opción local y PostgreSQL la del despliegue; la valorización utiliza costos de compra.",
     },
   },
+  {
+    id: "tarifa-clara",
+    title: "Tarifa Clara",
+    eyebrow: "WEB · CALCULADORA PARA FREELANCERS Y CONSULTORAS",
+    categories: ["web", "ux"],
+    label: "WEB / CALCULADORA DE TARIFA POR HORA",
+    summary: "Calcula cuánto cobrar por hora según tus gastos, la ganancia que buscas y el tiempo que puedes facturar.",
+    intro: "Tarifa Clara ayuda a freelancers y consultoras a convertir su objetivo mensual y sus horas facturables en una tarifa por hora. Muestra el desglose de cada estimación y permite probar distintos valores al instante.",
+    details: [
+      ["Cómo se calcula", "La estimación descuenta vacaciones y feriados, aplica el porcentaje facturable y reparte el objetivo anual entre las horas que quedan. La reserva fiscal y la cuota fija son editables."],
+      ["Dos perfiles en el navegador", "El perfil de Freelancer usa gastos personales. Consultora usa la remuneración de socios y las horas del equipo. Los valores de cada perfil se guardan por separado en el navegador."],
+      ["Implementación y diseño", "HTML, CSS y módulos JavaScript forman la web estática desplegada en Vercel. La interfaz adapta su composición editorial a escritorio y móvil, y permite copiar el resumen de la estimación."],
+    ],
+    tags: ["JavaScript", "HTML5", "CSS3", "UX/UI", "Vercel"],
+    cardTags: ["JavaScript", "CSS3", "UX/UI"],
+    image: "assets/tarifa-clara-portada.webp",
+    imageAlt: "Portada publicada de Tarifa Clara con la tarifa recomendada del escenario de ejemplo",
+    gallery: [
+      {
+        src: "assets/tarifa-clara-calculadora.webp",
+        alt: "Formulario de Tarifa Clara con los gastos, las horas de trabajo y el desglose de la estimación",
+        caption: "Calculadora en producción con los valores de ejemplo incluidos en la web.",
+      },
+    ],
+    note: "Calculadora de planificación. La reserva fiscal se introduce como un porcentaje estimado de la facturación.",
+    link: "https://tarifa-clara.vercel.app/",
+    linkText: "ABRIR CALCULADORA",
+    links: [{ href: "https://github.com/gpereyradev/tarifa-clara", label: "REPOSITORIO PRIVADO" }],
+    caseStudy: {
+      role: "Proyecto personal · Diseño y desarrollo web",
+      status: "Publicada en Vercel",
+      signal: "Tarifa mínima y recomendada en tiempo real",
+      problem: "Dividir los gastos entre todas las horas trabajadas subestima la tarifa cuando parte de la semana se dedica a tareas que no se facturan.",
+      decision: "Calcular con las horas facturables del año y mostrar dos tarifas: la mínima para cubrir los gastos y la recomendada para alcanzar la ganancia objetivo.",
+      outcome: "La estimación se actualiza al editar los valores y muestra las horas facturables, la facturación mensual y su desglose.",
+      decisions: [
+        { title: "Un resultado que se puede comprobar", choice: "Mostrar las horas y los importes que componen cada escenario junto a la tarifa.", reason: "El usuario puede ver cuánto influyen los gastos, el tiempo disponible y la reserva fiscal.", tradeoff: "La reserva se estima con un porcentaje editable sobre la facturación." },
+      ],
+      checks: ["Cambia el porcentaje facturable y compara la tarifa antes y después.", "Alterna entre Freelancer y Consultora para ver cómo se ajusta cada escenario."],
+      limit: "La aplicación calcula una tarifa orientativa y guarda los escenarios en el navegador.",
+    },
+  },
 ];
+
+export const featuredProjectIds = ["inventra", "nexus-ai", "tarifa-clara", "neurochess", "fitcoach"];
 
 export const projects = catalog.map(project => ({
   ...project,
   ...caseStudies[project.id],
 }));
 
-export const projectOrder = ['nexus-ai', 'novasalud', 'inventra', 'fitcoach', 'tuerka', 'neurochess', 'doit', 'parksense', 'portfolio', 'ecolim', 'proforma', 'app-escuela', 'mantenimiento', 'runner'];
+export const projectOrder = ['nexus-ai', 'novasalud', 'inventra', 'tarifa-clara', 'fitcoach', 'tuerka', 'neurochess', 'doit', 'parksense', 'portfolio', 'ecolim', 'proforma', 'app-escuela', 'mantenimiento', 'runner'];
 projects.sort((a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id));
